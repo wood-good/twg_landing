@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  </meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  </meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </meta>
+  <title>Sunnyside agency landing page</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="style.css">
+  </link>
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  </link>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  </link>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&amp;family=Fraunces:wght@700;900&amp;display=swap" rel="stylesheet">
+  </link>
+
+</head>
+
+<body class="page">
+
+  <header>
+
+    <nav class="navbar">
+
+      <a href="#" class="navbar-brand">
+        <img src="./images/logo.svg" alt="sunnyside logo">
+        </img>
+      </a>
+
+      <ul class="navbar-nav">
+
+        <li>
+          <a href="#about" class="nav-link">About</a>
+        </li>
+
+        <li>
+          <a href="#services" class="nav-link">Services</a>
+        </li>
+
+        <li>
+          <a href="#projects" class="nav-link">Projects</a>
+        </li>
+
+        <li>
+          <button class="btn">Contact</button>
+        </li>
+
+      </ul>
+
+      <button class="nav-toggle-btn">
+        <span class="line one"></span>
+        <span class="line two"></span>
+        <span class="line three"></span>
+      </button>
+
+    </nav>
+
+  </header>
+
+  <section class="inner-page-hero" data-v-component-post>
+    <div>
+      <div class="title-container">
+        <div class="container">
+          <nav aria-label="breadcrumb" class="text-muted text-small" data-v-component-breadcrumb>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item" data-v-breadcrumb-item>
+                <a href="#" data-v-breadcrumb-item-url data-v-if="breadcrumb.url">
+                  <span data-v-breadcrumb-item-text>Home</span>
+                </a>
+                <span data-v-breadcrumb-item-text data-v-if-not="breadcrumb.url">Home</span>
+              </li>
+              <li class="breadcrumb-item" data-v-breadcrumb-item>
+                <a href="#" data-v-breadcrumb-item-url data-v-if="breadcrumb.url">
+                  <span data-v-breadcrumb-item-text>Library</span>
+                </a>
+                <span data-v-breadcrumb-item-text data-v-if-not="breadcrumb.url">Library</span>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page" data-v-breadcrumb-item>
+                <span>Data</span>
+              </li>
+            </ol>
+          </nav>
+
+          <h1 data-v-post-name>My custom page</h1>
+        </div>
+      </div>
+
+
+      <!-- img data-v-post-image src="img/bg-img/bg-7.jpg" alt="" -->
+    </div>
+  </section>
+
+  <main id="site-content" data-v-component-post>
+
+    <!-- Single Blog Post Thumb -->
+    <!-- 
+	<div class="inner-page-hero" data-v-if="post.img">
+		<div class="title-container">
+			<h1 data-v-post-name>Post title</h1>
+		</div>
+		<img data-v-post-img loading="lazy" src="img/bg-img/bg-7.jpg" alt="">
+	</div>
+	-->
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div>
+            <!--
+					<h1 class="text-center" data-v-if-not="post.img" data-v-post-name>Page title</h1>
+					-->
+
+            <div class="" data-v-post-content>
+              <h2>Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et malesuada</h2>
+              <p>Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin. Praesent at tempus lectus, eleifend blandit felis. Fusce augue arcu, consequat a nisl aliquet, consectetur elementum turpis. Donec iaculis lobortis nisl, et viverra risus imperdiet eu. Etiam mollis posuere elit non sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis arcu a magna sodales venenatis. Integer non diam sit amet magna luctus mollis ac eu nisi. In accumsan tellus ut dapibus blandit.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <div class="container">
+    <div class="row mt-4 justify-content-center g-3">
+      <div class="col-sm-12 col-md-4 col-lg mb-4">
+        <article class="card h-100">
+          <!-- <div class="card-img-top text-center py-3 bg-body-tertiary"><i class="la la-comments display-1"></i></div> -->
+          <div class="card-body">
+            <div>
+              <h4 class="card-title fw-normal">Free</h4>
+              <h6 class="card-subtitle fw-normal">Open source forever</h6>
+            </div>
+
+            <div class="border-top my-3"></div>
+
+            <p class="card-text text-muted">Use Vvveb wihout any kind of limitation.</p>
+            <p class="card-text text-muted">With AGPL if you make changes to core files you must publicly release your changes.</p>
+            <!-- <p class="card-text text-muted">If you don't make any code changes to core then you don't have to do anything.</p> -->
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Price:</strong> Free
+            </li>
+            <li class="list-group-item">
+              <strong>License:</strong> AGPL
+            </li>
+            <li class="list-group-item">
+              <strong>Number of sites:</strong> Unlimited
+            </li>
+            <li class="list-group-item">
+              <strong>Support:</strong>
+              <a href="https://www.github.com/givanz/Vvveb/discussions">Community support</a>
+            </li>
+            <li class="list-group-item">
+              <strong>Respone time:</strong> Best effort
+            </li>
+          </ul>
+
+          <div class="card-footer bg-body py-4">
+            <a href="https://www.github.com/givanz/Vvveb/discussions" class="btn btn-primary mx-auto d-inline-block">
+              <span>Go to forum</span>
+              <i class="la la-angle-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg mb-4">
+        <article class="card h-100">
+          <!-- <div class="card-img-top text-center py-3 bg-body-tertiary"><i class="la la-comments display-1"></i></div> -->
+          <div class="card-body">
+            <div>
+              <h4 class="card-title fw-normal">Single site</h4>
+              <h6 class="card-subtitle fw-normal">Commercial</h6>
+            </div>
+
+            <div class="border-top my-3"></div>
+
+            <p class="card-text text-muted">Use Vvveb wihout any kind of limitation on one site.</p>
+            <p class="card-text text-muted">With a commercial license if you make changes to core files you can keep your changes private.</p>
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Price:</strong> $15/month
+            </li>
+            <li class="list-group-item">
+              <strong>License:</strong> Commercial
+            </li>
+            <li class="list-group-item">
+              <strong>Number of sites:</strong> 1
+            </li>
+            <li class="list-group-item">
+              <strong>Support:</strong> Email support
+            </li>
+            <li class="list-group-item">
+              <strong>Respone time:</strong> Priority support
+            </li>
+          </ul>
+
+          <div class="card-footer bg-body py-4">
+            <a href="https://www.github.com/givanz/Vvveb/discussions" class="btn btn-primary mx-auto d-inline-block">
+              <span>Signup now</span>
+              <i class="la la-angle-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg mb-4">
+        <article class="card h-100">
+          <!-- <div class="card-img-top text-center py-3 bg-body-tertiary"><i class="la la-comments display-1"></i></div> -->
+          <div class="card-body">
+            <div>
+              <h4 class="card-title fw-normal">Multiple sites</h4>
+              <h6 class="card-subtitle fw-normal">Commercial</h6>
+            </div>
+
+            <div class="border-top my-3"></div>
+
+            <p class="card-text text-muted">Use Vvveb wihout any kind of limitation on up to 10 sites.</p>
+            <p class="card-text text-muted">With a commercial license if you make changes to core files you can keep your changes private.</p>
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Price:</strong> $120/month
+            </li>
+            <li class="list-group-item">
+              <strong>License:</strong> Commercial
+            </li>
+            <li class="list-group-item">
+              <strong>Number of sites:</strong> 10
+            </li>
+            <li class="list-group-item">
+              <strong>Support:</strong> Email support
+            </li>
+            <li class="list-group-item">
+              <strong>Respone time:</strong> Priority support
+            </li>
+          </ul>
+
+          <div class="card-footer bg-body py-4">
+            <a href="https://www.github.com/givanz/Vvveb/discussions" class="btn btn-primary mx-auto d-inline-block">
+              <span>Signup now</span>
+              <i class="la la-angle-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="col-sm-12 col-md-4 col-lg mb-4">
+        <article class="card h-100">
+          <!-- <div class="card-img-top text-center py-3 bg-body-tertiary"><i class="la la-comments display-1"></i></div> -->
+          <div class="card-body">
+            <div>
+              <h4 class="card-title fw-normal">Enterprise</h4>
+              <h6 class="card-subtitle fw-normal">Commercial</h6>
+            </div>
+
+            <div class="border-top my-3"></div>
+
+            <p class="card-text text-muted">Use Vvveb wihout any kind of limitation on any number of site.</p>
+            <p class="card-text text-muted">With a commercial license if you make changes to core files you can keep your changes private.</p>
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Price:</strong> Custom
+            </li>
+            <li class="list-group-item">
+              <strong>License:</strong> Commercial
+            </li>
+            <li class="list-group-item">
+              <strong>Number of sites:</strong> Custom
+            </li>
+            <li class="list-group-item">
+              <strong>Support:</strong> Email support
+            </li>
+            <li class="list-group-item">
+              <strong>Respone time:</strong> Priority support
+            </li>
+          </ul>
+
+          <div class="card-footer bg-body py-4">
+            <a href="https://www.github.com/givanz/Vvveb/discussions" class="btn btn-primary mx-auto d-inline-block">
+              <span>Contact us</span>
+              <i class="la la-angle-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+      <!--
+						<div class="col-sm-12 col-md-4 col-lg mb-4">
+							<article class="card h-100">
+								
+								<div class="card-body">
+									<div>
+										<h4 class="card-title fw-normal">SaaS</h4>
+										<h6 class="card-subtitle fw-normal">Commercial</h6>
+									</div>
+									
+									<div class="border-top my-3"></div>
+									
+									<p class="card-text text-muted">Use Vvveb as a SaaS service providing CMS instances for your clients to build their own websites.</p>
+									<p class="card-text text-muted">Additional software is provided to handle the creation of instances and server setup.</p>
+								</div>
+
+								  <ul class="list-group list-group-flush">
+									<li class="list-group-item"><strong>Price:</strong> Custom</li>
+									<li class="list-group-item"><strong>License:</strong> Commercial</li>
+									<li class="list-group-item"><strong>Number of sites:</strong> Custom</li>
+									<li class="list-group-item"><strong>Support:</strong> Email support</li>
+									<li class="list-group-item"><strong>Respone time:</strong> Priority support</li>
+								  </ul>									
+
+								<div class="card-footer bg-body py-4">
+									<a href="https://www.github.com/givanz/Vvveb/discussions" class="btn btn-primary mx-auto d-inline-block"> <span>Notify me</span> <i class="la la-angle-right"></i> </a>
+								</div>
+							</article>
+						</div>
+						-->
+    </div>
+
+    <h3 class="fw-normal my-4 mx-2">Frequently asked questions</h3>
+
+    <div class="accordion" id="accordionExample" style="--bs-accordion-active-bg: transparent;--bs-accordion-active-color: var(--bs-link-color);">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What do I get?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            A Kirby license allows you to run a single installation on a single domain. Kirby is a self-hosted CMS. You have to bring your own hosting and domain on which you will run Kirby. The license is a one-time payment, there is no subscription, no yearly or monthly fees
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Accordion Item #2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Accordion Item #3
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+
+    <div class="footer-brand">
+      <svg width="124" height="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.857 18.708c1.638 0 2.995-.36 4.07-1.08 1.075-.721 1.613-1.769 1.613-3.144-.083-1.855-1.464-3.246-4.144-4.173l-1.44-.597c-.314-.1-.538-.198-.67-.298a.45.45 0 01-.198-.373c0-.414.273-.62.819-.62.678 0 1.182.347 1.513 1.043l3.698-1.044c-.893-2.22-2.614-3.329-5.162-3.329-1.522 0-2.788.398-3.797 1.193C1.15 7.08.645 8.116.645 9.39c0 .398.058.766.174 1.106.116.34.29.638.521.894.232.257.455.48.67.671.215.19.488.369.82.534.33.166.582.286.756.36.174.075.41.162.707.261l.422.15 1.49.546c.363.133.6.244.707.335a.449.449 0 01.16.36c0 .431-.404.647-1.215.647-1.191 0-1.903-.53-2.134-1.59L0 14.509c.463 2.8 2.416 4.2 5.857 4.2zm11.636 0c1.638 0 2.845-.63 3.623-1.888v1.615h5.112V5.366h-5.112v7.156c0 1.474-.505 2.21-1.514 2.21-1.026 0-1.539-.736-1.539-2.21V5.366h-5.112v7.653c0 3.793 1.514 5.69 4.542 5.69zm16.103-.273V11.28c0-1.475.504-2.212 1.513-2.212 1.026 0 1.54.737 1.54 2.212v7.155h5.111v-7.652c0-3.793-1.513-5.69-4.541-5.69-1.638 0-2.846.63-3.623 1.888V5.366h-5.113v13.069h5.113zm15.383 0V11.28c0-1.475.504-2.212 1.514-2.212 1.025 0 1.538.737 1.538 2.212v7.155h5.113v-7.652c0-3.793-1.514-5.69-4.542-5.69-1.638 0-2.846.63-3.623 1.888V5.366h-5.113v13.069h5.113zM64.958 24l8.289-18.634H67.91l-2.532 6.684-2.258-6.684h-5.584l5.435 11.802L59.944 24h5.014zm13.67-5.292c1.638 0 2.995-.36 4.07-1.08 1.076-.721 1.614-1.769 1.614-3.144-.083-1.855-1.465-3.246-4.145-4.173l-1.44-.597c-.314-.1-.537-.198-.67-.298a.45.45 0 01-.198-.373c0-.414.273-.62.819-.62.678 0 1.183.347 1.514 1.043l3.698-1.044c-.894-2.22-2.614-3.329-5.162-3.329-1.522 0-2.788.398-3.797 1.193-1.01.795-1.514 1.83-1.514 3.105 0 .398.058.766.173 1.106.116.34.29.638.522.894.231.257.455.48.67.671.215.19.488.369.819.534.33.166.583.286.757.36.173.075.41.162.707.261l.422.15 1.489.546c.364.133.6.244.707.335a.449.449 0 01.161.36c0 .431-.405.647-1.216.647-1.19 0-1.902-.53-2.134-1.59l-3.723.844c.464 2.8 2.416 4.2 5.857 4.2zm9.8-14.137c.91 0 1.613-.215 2.11-.646.495-.43.744-.977.744-1.64 0-.678-.24-1.23-.72-1.651C90.082.21 89.371 0 88.428 0c-.943 0-1.655.211-2.135.634-.48.422-.72.973-.72 1.652 0 .662.249 1.209.745 1.64.497.43 1.2.645 2.11.645zm2.556 13.864V5.366H85.87v13.069h5.113zm7.74.273c1.737 0 2.977-.63 3.722-1.888v1.615h5.112V.472h-5.112v6.534c-.745-1.275-1.985-1.913-3.723-1.913-1.753 0-3.214.642-4.38 1.926-1.166 1.283-1.75 2.91-1.75 4.882 0 1.97.584 3.598 1.75 4.882 1.166 1.283 2.627 1.925 4.38 1.925zm1.39-3.9c-.729 0-1.312-.274-1.75-.82-.439-.547-.658-1.243-.658-2.087 0-.845.215-1.54.645-2.087.447-.547 1.034-.82 1.762-.82s1.311.273 1.75.82c.438.546.657 1.242.657 2.087 0 .844-.219 1.54-.657 2.087-.439.546-1.022.82-1.75.82zm16.698 3.9c2.597 0 4.624-.754 6.08-2.26l-2.11-2.833c-1.042.845-2.217 1.267-3.524 1.267-.992 0-1.799-.224-2.42-.67-.62-.448-.93-.879-.93-1.293h9.604c.083-.298.124-.687.124-1.167 0-2.054-.674-3.677-2.022-4.87-1.349-1.193-3.073-1.789-5.175-1.789-2.25 0-4.028.671-5.335 2.013-1.307 1.341-1.961 2.956-1.961 4.844 0 1.938.69 3.549 2.072 4.833 1.382 1.283 3.247 1.925 5.597 1.925zm2.208-8.149h-5.112c.033-.613.298-1.08.794-1.404.496-.323 1.084-.484 1.762-.484.678 0 1.266.165 1.762.497.497.331.761.795.794 1.391z" fill="#2B7362" fill-rule="nonzero"></path>
+      </svg>
+    </div>
+
+    <ul class="footer-nav">
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#services">Services</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+    </ul>
+
+    <div class="social-links">
+
+      <a href="#">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+
+      <a href="#">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+
+      <a href="#">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+
+      <a href="#">
+        <ion-icon name="logo-pinterest"></ion-icon>
+      </a>
+
+    </div>
+
+  </footer>
+
+  </div>
+
+
+
+
+
+  <!--
+    - custom script
+  -->
+
+  <script>
+
+    // navbar variable
+
+    const nav = document.querySelector(".navbar-nav");
+    const navToggleBtn = document.querySelector(".nav-toggle-btn");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // navbar toggle function
+    const navToggleFunc = function () {
+      nav.classList.toggle('active');
+      navToggleBtn.classList.toggle('active');
+    }
+
+    navToggleBtn.addEventListener('click', navToggleFunc);
+
+    for (let i = 0; i &lt; navLinks.length; i++) {
+
+      navLinks[i].addEventListener('click', navToggleFunc);
+
+    }
+
+  </script>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>

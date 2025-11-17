@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sunnyside agency landing page</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/style.bundle.css">
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&amp;family=Fraunces:wght@700;900&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <header data-v-save-global="index.html,header">
+
+    <div class="container">
+      <nav class="navbar" data-navbar data-v-component-menu="header" data-v-slug="main-menu">
+
+        <div class="navbar-brand logo" data-v-component-site>
+          <!-- <a class="navbar-brand" href="/" data-url data-v-url-params='{"host":"www.*.*"}'><span class="visually-hidden">Logo</span> -->
+          <a class="navbar-brand h4 mb-0 text-decoration-none" href="/" data-v-site-url>
+            <span class="visually-hidden">Logo</span>
+            <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo>
+            <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky>
+            <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark>
+            <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky>
+          </a>
+        </div>
+
+        <ul class="navbar-list m-0" data-v-menu-items>
+          <li class="nav-item dropdown position-static" data-v-menu-item data-v-class-if-has-dropdown="category.children &gt; 0" data-v-class-if-position-static="category.has-text">
+
+            <a class="navbar-link dropdown-toggle" data-v-class-if-dropdown-toggle="category.children &gt; 0" data-v-class-if-active="category.active" aria-expanded="false" data-v-menu-item-url>
+              <span data-v-menu-item-name data-v-if-not="category.type = 'text' &amp;&amp; category.name"></span>
+              <span data-v-if="category.content" data-v-menu-item-content>
+                <p>
+                  <img src="/media/vvveb.svg" height="24" alt="" class="me-2">Mega menu
+                </p>
+              </span>
+            </a>
+
+            <div class="dropdown-menu" data-v-menu-item-recursive>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" data-v-class-if-active="category.active &amp;&amp; category.type != 'text'" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'"></span>
+                  <span data-v-if="category.content" data-v-menu-item-content>
+                    <div class="row">
+                      <div class="col-6 align-self-center">
+                        <img src="img/demo/video-1.webp" alt="Post" width="250" loading="lazy" class="rounded img-fluid">
+                      </div>
+                      <div class="col-6">
+                        <h4>Features</h4>
+                        <p class="text-muted">Just a few mentions, but there is more</p>
+                        <ul class="list-unstyled">
+                          <li class="text-primary">Page builder</li>
+                          <li class="text-primary">Mega menu</li>
+                          <li class="text-primary">Multi language</li>
+                          <li class="text-primary">Advanced SEO</li>
+                          <li class="text-primary">Ecommerce</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </span>
+                </a>
+              </div>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-class-if-active="category.active" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown" data-v-menu-item>
+            <a class="navbar-link dropdown-toggle" href="https://blog.vvveb.com" data-v-menu-item-url>
+              <span data-v-menu-item-name>Blog</span>
+            </a>
+
+            <div class="dropdown-menu" data-v-menu-item-recursive>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">User Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" data-v-menu-item>
+            <a class="navbar-link" href="https://www.vvveb.com/page/contact" data-v-menu-item-url>
+              <span data-v-menu-item-name>Contact</span>
+            </a>
+          </li>
+          <li class="nav-item" data-v-menu-item>
+            <a class="navbar-link" href="https://www.vvveb.com" data-v-menu-item-url>
+              <span data-v-menu-item-name>About us</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="/page/contact" class="btn btn-primary">Contact</a>
+
+        <button class="nav-toggle-btn">
+          <span class="line one"></span>
+          <span class="line two"></span>
+          <span class="line three"></span>
+        </button>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main id="site-content" role="main">
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div>
+        <nav aria-label="breadcrumb" class="text-muted text-small" data-v-component-breadcrumb>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" data-v-breadcrumb-item>
+              <a data-v-breadcrumb-item-url data-v-if="breadcrumb.url">
+                <span data-v-breadcrumb-item-text>Home</span>
+              </a>
+              <span data-v-breadcrumb-item-text data-v-if-not="breadcrumb.url">Home</span>
+            </li>
+            <li class="breadcrumb-item" data-v-breadcrumb-item>
+              <a data-v-breadcrumb-item-url data-v-if="breadcrumb.url">
+                <span data-v-breadcrumb-item-text>Library</span>
+              </a>
+              <span data-v-breadcrumb-item-text data-v-if-not="breadcrumb.url">Library</span>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page" data-v-breadcrumb-item>
+              <span>Data</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <div id="cart-container">
+        <form action="" method="post" enctype="multipart/form-data" data-v-if="this.cart.total_items" data-v-cart-page>
+
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card mb-4">
+                <div class="table-responsive card-body cart-table p-0">
+                  <table class="table align-middle m-0" data-v-cart>
+                    <thead class="table-lig2ht">
+                      <tr>
+                        <th class="text-center">Image</th>
+                        <th class="text-start">Product Name</th>
+                        <!-- <th class="text-start">Model</th> -->
+                        <th class="text-center">Quantity</th>
+                        <!-- <th class="text-end">Unit Price</th> -->
+                        <th class="text-end">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr data-v-cart-product>
+                        <td class="text-center cart-img">
+                          <a href="#40" data-v-cart-product-url>
+                            <img src="demo/img/product.webp" loading="lazy" alt="Product name" class="img-rounded" data-v-cart-product-image width=80 loading="lazy">
+                          </a>
+                        </td>
+                        <td class="text-start">
+                          <a href="#40" data-v-cart-product-url>
+                            <span data-v-cart-product-name>Product name</span>
+                          </a>
+
+                          <div class="price">
+                            <span data-v-cart-product-price_tax_formatted>$246.40</span>
+                          </div>
+
+                          <div class="option" data-v-if="product.option_value">
+                            <div class="" data-v-product-option>
+                              <span data-v-product-option-option>Color</span>: <span data-v-product-option-name>Red</span>
+                              <span data-v-if="value.price > 0">(<span data-v-product-option-price_formatted></span>)</span>
+                            </div>
+                            <div class="" data-v-product-option>
+                              <span data-v-product-option-option>Size</span>: <span data-v-product-option-name>XL</span>
+                              <span data-v-if="value.price > 0">(<span data-v-product-option-price_formatted></span>)</span>
+                            </div>
+                            <div class="" data-v-product-option>
+                              <span data-v-product-option-option>Material</span>: <span data-v-product-option-name>Wool</span>
+                              <span data-v-if="value.price > 0">(<span data-v-product-option-price_formatted></span>)</span>
+                            </div>
+                          </div>
+
+                          <div class="subscription" data-v-if="product.subscription">
+                            <span>Subscription plan</span>:
+                            <span data-v-cart-product-subscription_name>Subscription plan</span>
+                          </div>
+                        </td>
+
+                        <!-- <td class="text-start">product 11</td> -->
+                        <td class="text-center">
+                          <div class="quantity">
+                            <div class="input-group">
+                              <a class="btn btn-minus btn-sm">
+                                <i class="la la-minus"></i>
+                              </a>
+                              <input name="quantity" value="1" size="1" min="1" class="form-control form-control-sm" type="number" data-v-cart-product-quantity>
+                              <a class="btn btn-plus btn-sm">
+                                <i class="la la-plus"></i>
+                              </a>
+                            </div>
+                          </div>
+                          <a class="btn btn-sm btn-remove" data-v-cart-product-remove-url>
+                            <i class="la la-times-circle la-lg"></i>
+                            <!-- <span>Remove</span> -->
+                          </a>
+                          </a>
+                        </td>
+                        <!-- <td class="text-end price" data-v-cart-product-price>$123.20</td> -->
+                        <td class="text-end total px-4">
+                          <span data-v-cart-product-total_tax_formatted>$246.40</span>
+                        </td>
+                      </tr>
+                      <tr data-v-cart-product>
+                        <td class="text-center cart-img">
+                          <a href="#40" data-v-cart-product-url>
+                            <img src="demo/img/product.webp" loading="lazy" alt="Product name" class="img-rounded" data-v-cart-product-image width=80 loading="lazy">
+                          </a>
+                        </td>
+                        <td class="text-start">
+                          <a href="#40" data-v-cart-product-url>
+                            <span data-v-cart-product-name>Product name</span>
+                          </a>
+                          <div class="price">
+                            <span data-v-cart-product-price_tax_formatted>$246.40</span>
+                          </div>
+                        </td>
+
+                        <!-- <td class="text-start">product 11</td> -->
+                        <td class="text-center">
+                          <div class="quantity">
+                            <div class="input-group">
+                              <a class="btn btn-minus btn-sm">
+                                <i class="la la-minus"></i>
+                              </a>
+                              <input name="quantity" value="1" size="1" min="1" class="form-control form-control-sm" type="number" data-v-cart-product-quantity>
+                              <a class="btn btn-plus btn-sm">
+                                <i class="la la-plus"></i>
+                              </a>
+                            </div>
+                          </div>
+                          <a class="btn btn-remove" data-v-cart-product-remove-url>
+                            <i class="la la-trash"></i>
+                            <!-- <span>Remove</span> -->
+                          </a>
+                          </a>
+                        </td>
+                        <!-- <td class="text-end price" data-v-cart-product-price>$123.20</td> -->
+                        <td class="text-end total px-4">
+                          <span data-v-cart-product-total_tax_formatted>$246.40</span>
+                        </td>
+                      </tr>
+                      <tr data-v-if-not="this.cart.total_items">
+                        <td colspan="100">
+                          <div class="text-center">
+                            <h6>No products!</h6>
+                            <span class="text-muted">Empty cart</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfooter>
+                      <tr>
+                        <td colspan="4" class="text-end border-top small text-muted">
+                          <span data-v-cart-cart-total_items>2</span> items
+                          <span data-v-cart-cart-total_weight>2</span>
+                          <span data-v-cart-cart-weight_unit>kg</span>
+                        </td>
+                      </tr>
+                    </tfooter>
+                  </table>
+
+
+                  <!--
+					<table class="table mb-0 cart-table cart-total" cellspacing="0">
+						  <tfoot>
+							  <tr data-v-cart-total>
+								 <td colspan="5" class="text-end"><small data-v-cart-total-title>Sub-Total:</small></td>
+								 <td class="text-end" data-v-cart-total-value>$101.00</td>
+							  </tr>
+							  <tr data-v-cart-total>
+								 <td colspan="5" class="text-end"><small>Eco Tax (2.00):</small></td>
+								 <td class="text-end">$2.00</td>
+							  </tr>
+							  <tr data-v-cart-total>
+								 <td colspan="5" class="text-end"><small>VAT (19%):</small></td>
+								 <td class="text-end">$20.20</td>
+							  </tr>
+							  <tr data-v-cart-total>
+								 <td colspan="5" class="text-end"><small>Total:</small></td>
+								 <td class="text-end">$123.20</td>
+							  </tr>
+						   </tfoot>
+					  </table>
+					-->
+                </div>
+              </div>
+
+            </div>
+
+            <div class="col-md-4 cart-right-column">
+              <div class="card">
+
+                <div class="card-body p-4">
+                  <div class="table-responsive mb-2" data-v-cart-totals>
+                    <table class="table mb-0 cart-table cart-total" cellspacing="0">
+                      <tfoot>
+                        <tr data-v-cart-total>
+                          <td colspan="5" class="text-end">
+                            <small data-v-cart-total-title>Sub-Total</small>:
+                          </td>
+                          <td class="text-end">
+                            <span class="text-end" data-v-cart-total-text data-v-if="total.text"> - </span>
+                            <span data-v-cart-total-value_formatted data-v-if="total.value > 0">$101.00</span>
+                          </td>
+                        </tr>
+                        <tr data-v-cart-total>
+                          <td colspan="5" class="text-end">
+                            <small>Eco Tax (2.00):</small>
+                          </td>
+                          <td class="text-end">$2.00</td>
+                        </tr>
+                        <tr data-v-cart-total>
+                          <td colspan="5" class="text-end">
+                            <small>VAT (19%):</small>
+                          </td>
+                          <td class="text-end">$20.20</td>
+                        </tr>
+                        <tr data-v-cart-total>
+                          <td colspan="5" class="text-end">
+                            <small>Total:</small>
+                          </td>
+                          <td class="text-end">$123.20</td>
+                        </tr>
+                        <tr>
+                          <td colspan="5" class="text-end fw-semibold">Total:</td>
+                          <td class="text-end fw-semibold" data-v-cart-cart-total_formatted>$0</td>
+                        </tr>
+                      </tfoot>
+
+                    </table>
+                  </div>
+
+                  <div class="list-group mb-3" data-v-cart-coupons>
+                    <div class="list-group-item" data-v-cart-coupon>
+                      <div class="small" data-v-cart-coupon-name>-10% Discount</div>
+                      <span class="badge bg-success-subtle text-body me-2 code" data-v-cart-coupon-code>discount10</span>
+                      <button class="btn btn-remove btn-sm btn-remove-coupon float-end" name="removeCoupon">
+                        <i class="la la-lg la-times-circle"></i>
+                      </button>
+                    </div>
+                    <div class="list-group-item" data-v-cart-coupon>
+                      <div class="small" data-v-cart-coupon-name>Free shipping</div>
+                      <span class="badge bg-success-subtle text-body me-2 code" data-v-cart-coupon-code>freeship</span>
+                      <button class="btn btn-remove btn-sm btn-remove-coupon float-end" name="removeCoupon">
+                        <i class="la la-lg la-times-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="notifications" data-v-notifications>
+
+                    <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error data-v-type="coupon">
+
+                      <div class="icon align-middle me-2">
+                        <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+                      </div>
+
+                      <div class="flex-grow-1 align-self-center text-small">
+                        <div>
+                          <div data-v-notification-text>
+                            This is a placeholder for a notification message.
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">
+                          <!-- <i class="la la-times"></i> -->
+                        </span>
+                      </button>
+                    </div>
+
+                    <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success data-v-type="coupon">
+
+                      <div class="icon align-middle me-2">
+                        <i class="align-middle la la-2x lh-1 la-check-circle"></i>
+                      </div>
+
+                      <div class="flex-grow-1 align-self-center align-middle" data-v-notification-text>
+                        This is a placeholder for a success message.
+                      </div>
+
+                      <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">
+                          <!-- <i class="la la-times"></i> -->
+                        </span>
+                      </button>
+                    </div>
+
+                    <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info data-v-type="coupon">
+
+                      <div class="icon align-middle me-2">
+                        <i class="align-middle la la-2x lh-1  la-info-circle"></i>
+                      </div>
+
+                      <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                        This is a placeholder for a info message.
+                      </div>
+
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">
+                          <!-- <i class="la la-times"></i> -->
+                        </span>
+                      </button>
+                    </div>
+
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <input type="text" name="coupon" class="form-control" id="coupon_code" placeholder="Coupon Code" aria-label="Coupon Code">
+                    <button class="btn btn-outline-primary btn-sm btn-coupon px-4" type="button">
+
+                      <span class="loading d-none">
+                        <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                        </span>
+                        <span>Applying </span>...
+                      </span>
+
+                      <span class="button-text">
+                        Apply <i class="la la-arrow-right float-end ms-2"></i>
+                      </span>
+
+                    </button>
+                  </div>
+
+                  <div class="mx-2 mt-5 mb-2">
+                    <a href="/checkout" class="btn btn-primary d-block" data-v-url="checkout/checkout/index">Checkout <i class="la la-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div data-v-if-not="this.cart.total_items">
+        <div class="text-center py-5">
+
+          <div class="alert" role="alert">
+            <div>
+              <h1>Empty cart</h1>
+            </div>
+
+
+            <div class="text-muted">
+              <i class="la la-lg la-shopping-cart"></i>
+              No products to display in the cart!
+            </div>
+          </div>
+          <a href="/" class="btn btn-success">Continue shopping <i class="la la-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer data-v-save-global="index.html,footer">
+    <div class="container">
+      <div class="navbar-brand logo" data-v-component-site>
+        <!-- <a class="navbar-brand" href="/" data-url data-v-url-params='{"host":"www.*.*"}'><span class="visually-hidden">Logo</span> -->
+        <a class="navbar-brand h4 mb-0 text-decoration-none" href="/" data-v-site-url>
+          <span class="visually-hidden">Logo</span>
+          <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo>
+          <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky>
+          <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark>
+          <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky>
+        </a>
+      </div>
+
+      <ul class="footer-nav">
+
+        <li>
+          <a href="/about">About</a>
+        </li>
+
+        <li>
+          <a href="/page/services">Services</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+      </ul>
+
+      <div class="social-links">
+
+        <a href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-pinterest"></ion-icon>
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+  <!--
+    - custom script
+  -->
+
+  <script>
+
+    // navbar variable
+
+    const nav = document.querySelector(".navbar-nav");
+    const navToggleBtn = document.querySelector(".nav-toggle-btn");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // navbar toggle function
+    const navToggleFunc = function () {
+      nav.classList.toggle('active');
+      navToggleBtn.classList.toggle('active');
+    }
+
+    navToggleBtn.addEventListener('click', navToggleFunc);
+
+    for (let i = 0; i < navLinks.length; i++) {
+
+      navLinks[i].addEventListener('click', navToggleFunc);
+
+    }
+
+  </script>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+  <div class="alert alert-light alert-dismissible fade alert-top" role="alert" style="display:none">
+    <div class="container">
+
+      <div class="message">
+        Product was added to cart.
+      </div>
+
+
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <form action="/search" method="get">
+            <input type="hidden" name="route" value="search">
+            <div class="input-group">
+              <input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-selector=".search-results" data-v-vvveb-on="keyup">
+              <button class="btn btn-outline-primary border" type="submit" title="Search">
+                <div class="la-flip-horizontal">
+                  <i class="la la-search la-lg" aria-hidden="true"></i>
+                </div>
+              </button>
+            </div>
+          </form>
+
+          <div class="search-results">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-loading-status" class="progress top-0 position-fixed progress-bar" role="progressbar" aria-label="Page loading status" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="z-index: 10;--bs-progress-bg: transparent;--bs-progress-height: 1px;width:0%"></div>
+
+
+  <script id="app-js" src="/js/app.js"></script>
+  <script id="theme-js" src="/js/app/theme.js"></script>
+  <script id="cart-js" src="/js/app/cart.js"></script>
+
+</body>
+
+</html>

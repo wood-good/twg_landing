@@ -1,0 +1,9 @@
+# Upgrade Dependencies Workflow
+name: upgrade-dependencies
+description: "Safe dependency updates with testing and rollback capability"
+author: "Colonel Forge & Corporal Types"
+config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
+installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/upgrade-dependencies"
+template: false
+instructions: "{installed_path}/instructions.md"
+standalone: true

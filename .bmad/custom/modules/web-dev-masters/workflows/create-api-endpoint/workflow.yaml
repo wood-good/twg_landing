@@ -1,0 +1,9 @@
+# Create API Endpoint Workflow
+name: create-api-endpoint
+description: "Build secure REST/GraphQL API endpoints with validation and documentation"
+author: "Captain Iron"
+config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
+installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/create-api-endpoint"
+template: false
+instructions: "{installed_path}/instructions.md"
+standalone: true

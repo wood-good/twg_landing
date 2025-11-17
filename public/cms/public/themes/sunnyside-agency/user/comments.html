@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sunnyside agency landing page</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/style.bundle.css">
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&amp;family=Fraunces:wght@700;900&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <header data-v-save-global="index.html,header">
+
+    <div class="container">
+      <nav class="navbar" data-navbar data-v-component-menu="header" data-v-slug="main-menu">
+
+        <div class="navbar-brand logo" data-v-component-site>
+          <!-- <a class="navbar-brand" href="/" data-url data-v-url-params='{"host":"www.*.*"}'><span class="visually-hidden">Logo</span> -->
+          <a class="navbar-brand h4 mb-0 text-decoration-none" href="/" data-v-site-url>
+            <span class="visually-hidden">Logo</span>
+            <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo>
+            <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky>
+            <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark>
+            <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky>
+          </a>
+        </div>
+
+        <ul class="navbar-list m-0" data-v-menu-items>
+          <li class="nav-item dropdown position-static" data-v-menu-item data-v-class-if-has-dropdown="category.children &gt; 0" data-v-class-if-position-static="category.has-text">
+
+            <a class="navbar-link dropdown-toggle" data-v-class-if-dropdown-toggle="category.children &gt; 0" data-v-class-if-active="category.active" aria-expanded="false" data-v-menu-item-url>
+              <span data-v-menu-item-name data-v-if-not="category.type = 'text' &amp;&amp; category.name"></span>
+              <span data-v-if="category.content" data-v-menu-item-content>
+                <p>
+                  <img src="/media/vvveb.svg" height="24" alt="" class="me-2">Mega menu
+                </p>
+              </span>
+            </a>
+
+            <div class="dropdown-menu" data-v-menu-item-recursive>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" data-v-class-if-active="category.active &amp;&amp; category.type != 'text'" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'"></span>
+                  <span data-v-if="category.content" data-v-menu-item-content>
+                    <div class="row">
+                      <div class="col-6 align-self-center">
+                        <img src="img/demo/video-1.webp" alt="Post" width="250" loading="lazy" class="rounded img-fluid">
+                      </div>
+                      <div class="col-6">
+                        <h4>Features</h4>
+                        <p class="text-muted">Just a few mentions, but there is more</p>
+                        <ul class="list-unstyled">
+                          <li class="text-primary">Page builder</li>
+                          <li class="text-primary">Mega menu</li>
+                          <li class="text-primary">Multi language</li>
+                          <li class="text-primary">Advanced SEO</li>
+                          <li class="text-primary">Ecommerce</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </span>
+                </a>
+              </div>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-class-if-active="category.active" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown" data-v-menu-item>
+            <a class="navbar-link dropdown-toggle" href="https://blog.vvveb.com" data-v-menu-item-url>
+              <span data-v-menu-item-name>Blog</span>
+            </a>
+
+            <div class="dropdown-menu" data-v-menu-item-recursive>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">User Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" data-v-menu-item>
+            <a class="navbar-link" href="https://www.vvveb.com/page/contact" data-v-menu-item-url>
+              <span data-v-menu-item-name>Contact</span>
+            </a>
+          </li>
+          <li class="nav-item" data-v-menu-item>
+            <a class="navbar-link" href="https://www.vvveb.com" data-v-menu-item-url>
+              <span data-v-menu-item-name>About us</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="/page/contact" class="btn btn-primary">Contact</a>
+
+        <button class="nav-toggle-btn">
+          <span class="line one"></span>
+          <span class="line two"></span>
+          <span class="line three"></span>
+        </button>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main id="site-content" role="main">
+
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-3 user-sidebar" data-v-save-global="user/index.html,.user-sidebar">
+
+          <ul class="nav flex-column nav-pills me-4 user-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="user" data-url data-selector="#user-container" data-v-url="user/index">
+                <i class="la la-tachometer-alt la-lg me-1"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user/orders" data-url data-selector="#user-container" data-v-url="user/orders/index">
+                <i class="la la-shopping-bag la-lg me-1"></i>
+                <span>Your Orders</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user/profile" data-url data-selector="#user-container" data-v-url="user/profile/index">
+                <i class="la la-cogs la-lg me-1"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user/address" data-url data-selector="#user-container" data-v-url="user/address/index">
+                <i class="la la-map-pin la-lg me-1"></i>
+                <span>Address</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user/downloads" data-url data-selector="#user-container" data-v-url="user/downloads/index">
+                <i class="la la-download la-lg me-1"></i>
+                <span>Downloads</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user/comments" data-url data-selector="#user-container" data-v-url="user/comments/index">
+                <i class="la la-comment la-lg me-1"></i>
+                <span>Comments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="user/wishlist" data-url data-selector="#user-container" data-v-url="user/wishlist/index">
+                <i class="la la-hand-holding-heart la-lg me-1"></i>
+                <span>Wishlist</span>
+              </a>
+            </li>
+            <!--	
+  <li class="nav-item">
+	<a class="nav-link" href="user/notifications" data-v-url="user/notifications/index"><i class="la la-bell la-lg me-1"></i><span>Notification</span></a>
+  </li>
+  -->
+            <li class="nav-item">
+              <hr>
+            </li>
+            <li class="nav-item">
+
+              <form action method="post" enctype="multipart/form-data" data-v-url="user/login/index" data-selector="body">
+
+                <input type="hidden" name="logout">
+
+                <button type="submit" value="logout" class="btn nav-link">
+
+                  <span class="loading d-none">
+                    <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+                    </span>
+                    <span>Loading ...</span>...
+                  </span>
+
+                  <span class="button-text">
+                    <i class="la la-sign-out-alt la-lg me-1"></i>
+                    <span>Log out</span>
+                    </a>
+                  </span>
+
+                </button>
+              </form>
+
+            </li>
+          </ul>
+
+
+        </div>
+
+        <div class="col-md-9 justify-content-center border-start px-4" id="user-container">
+          <div class="notifications" data-v-notifications>
+
+            <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error>
+
+              <div class="icon align-middle me-2">
+                <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
+              </div>
+
+              <div class="flex-grow-1 align-self-center text-small">
+                <div>
+                  <div data-v-notification-text>
+                    This is a placeholder for a notification message.
+                  </div>
+                </div>
+              </div>
+
+
+              <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                  <!-- <i class="la la-times"></i> -->
+                </span>
+              </button>
+            </div>
+
+            <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success>
+
+              <div class="icon align-middle me-2">
+                <i class="align-middle la la-2x lh-1 la-check-circle"></i>
+              </div>
+
+              <div class="flex-grow-1 align-self-center align-middle" data-v-notification-text>
+                This is a placeholder for a success message.
+              </div>
+
+              <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                  <!-- <i class="la la-times"></i> -->
+                </span>
+              </button>
+            </div>
+
+            <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info>
+
+              <div class="icon align-middle me-2">
+                <i class="align-middle la la-2x lh-1  la-info-circle"></i>
+              </div>
+
+              <div class="flex-grow-1 align-self-center" data-v-notification-text>
+                This is a placeholder for a info message.
+              </div>
+
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">
+                  <!-- <i class="la la-times"></i> -->
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          <h2>Comments</h2>
+
+          <div class="table-responsive" data-v-user_id="" data-v-post_id="null" data-v-component-comments>
+            <table class="table table-hover border-top">
+              <thead>
+                <tr>
+                  <td class="text-center">Comment</td>
+                  <td class="text-center">Author</td>
+                  <td class="text-center">Status</td>
+                  <td class="text-center">Date added</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr data-v-comment>
+                  <td class="text-center">
+                    <span data-v-comment-content></span>
+                  </td>
+                  <td class="text-center">
+                    <span data-v-comment-author data-filter-capitalize></span>
+                  </td>
+                  <td class="text-center">
+                    <span data-v-comment-status></span>
+                  </td>
+                  <td class="text-center">
+                    <span data-v-comment-created_at data-filter-friendly_date></span>
+                  </td>
+                  <td class="text-center">
+                    <a href="" title="View" class="btn btn-primary btn-sm" data-v-comment-url>
+                      <i class="la la-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr data-v-if-not="count >= 1">
+                  <td colspan="100">
+                    <div class="text-center p-4">
+                      <div>
+                        <i class="la la-comment-alt fs-1 mb-2"></i>
+                        <h6>No comments to display!</h6>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div data-pagination data-v-parent-component="comments" data-v-parent-index="0" data-v-parameters='{}'>
+
+            <nav data-v-if="pagecount > 1">
+              <ul class="pagination pagination-sm justify-content-end pt-2 mt-2" style="border-top: 1px solid var(--bs-border-color);">
+
+                <!--
+			<li class="page-item pager-first" data-first>
+				<a class="page-link" title="First page" data-page-url data-v-if="current_page > 1">
+					<span aria-hidden="true" class="la la-angle-double-left"></span>
+					<span class="sr-only">First</span>
+				</a>
+			</li>
+			-->
+
+                <li class="page-item pager-prev lh-1" data-prev>
+
+                  <a class="page-link" aria-label="Previous" title="Previous page" data-page-url data-scroll="start" data-v-if="current_page > 1">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg> -->
+                    <span aria-hidden="true" class="la la-arrow-left la-lg"></span>
+                    <!-- <span>Newer Posts</span> -->
+                  </a>
+
+                </li>
+
+
+                <li class="page-item" data-page>
+                  <a class="page-link" data-page-no data-page-url data-scroll="start">1</a>
+                </li>
+                <li class="page-item" data-page>
+                  <a class="page-link" data-page-no data-page-url data-scroll="start">2</a>
+                </li>
+                <li class="page-item" data-page>
+                  <a class="page-link" data-page-no data-page-url data-scroll="start">3</a>
+                </li>
+                <li class="page-item" data-page>
+                  <a class="page-link" data-page-no data-page-url data-scroll="start">4</a>
+                </li>
+                <li class="page-item" data-page>
+                  <a class="page-link" data-page-no data-page-url data-scroll="start">5</a>
+                </li>
+
+                <li class="page-item pager-next" data-next>
+                  <a class="page-link lh-1" aria-label="Next" title="Next page" data-page-url data-scroll="start" data-v-if="current_page < pagecount">
+                    <!-- <span>Older Posts</span> -->
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg> -->
+                    <span aria-hidden="true" class="la la-arrow-right la-lg"></span>
+                  </a>
+                </li>
+
+                <!--
+			<li class="page-item pager-last" data-last>
+				<a class="page-link" title="Last page" data-page-url data-v-if="current_page < pagecount">
+				<span aria-hidden="true" class="la la-angle-double-right"></span>
+					<span class="sr-only">Last</span>
+				</a>
+			</li>
+			-->
+
+              </ul>
+            </nav>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer data-v-save-global="index.html,footer">
+    <div class="container">
+      <div class="navbar-brand logo" data-v-component-site>
+        <!-- <a class="navbar-brand" href="/" data-url data-v-url-params='{"host":"www.*.*"}'><span class="visually-hidden">Logo</span> -->
+        <a class="navbar-brand h4 mb-0 text-decoration-none" href="/" data-v-site-url>
+          <span class="visually-hidden">Logo</span>
+          <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo>
+          <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky>
+          <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark>
+          <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky>
+        </a>
+      </div>
+
+      <ul class="footer-nav">
+
+        <li>
+          <a href="/about">About</a>
+        </li>
+
+        <li>
+          <a href="/page/services">Services</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+      </ul>
+
+      <div class="social-links">
+
+        <a href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-pinterest"></ion-icon>
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!--
+    - custom script
+  -->
+
+  <script>
+
+    // navbar variable
+
+    const nav = document.querySelector(".navbar-nav");
+    const navToggleBtn = document.querySelector(".nav-toggle-btn");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // navbar toggle function
+    const navToggleFunc = function () {
+      nav.classList.toggle('active');
+      navToggleBtn.classList.toggle('active');
+    }
+
+    navToggleBtn.addEventListener('click', navToggleFunc);
+
+    for (let i = 0; i < navLinks.length; i++) {
+
+      navLinks[i].addEventListener('click', navToggleFunc);
+
+    }
+
+  </script>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+  <div class="alert alert-light alert-dismissible fade alert-top" role="alert" style="display:none">
+    <div class="container">
+
+      <div class="message">
+        Product was added to cart.
+      </div>
+
+
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <form action="/search" method="get">
+            <input type="hidden" name="route" value="search">
+            <div class="input-group">
+              <input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-selector=".search-results" data-v-vvveb-on="keyup">
+              <button class="btn btn-outline-primary border" type="submit" title="Search">
+                <div class="la-flip-horizontal">
+                  <i class="la la-search la-lg" aria-hidden="true"></i>
+                </div>
+              </button>
+            </div>
+          </form>
+
+          <div class="search-results">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-loading-status" class="progress top-0 position-fixed progress-bar" role="progressbar" aria-label="Page loading status" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="z-index: 10;--bs-progress-bg: transparent;--bs-progress-height: 1px;width:0%"></div>
+
+
+  <script id="app-js" src="/js/app.js"></script>
+  <script id="theme-js" src="/js/app/theme.js"></script>
+  <script id="cart-js" src="/js/app/cart.js"></script>
+
+
+</body>
+
+</html>

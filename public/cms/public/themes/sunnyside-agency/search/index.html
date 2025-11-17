@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sunnyside agency landing page</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="css/style.bundle.css">
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&amp;family=Fraunces:wght@700;900&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="search-page">
+
+  <header data-v-save-global="index.html,header">
+
+    <div class="container">
+      <nav class="navbar" data-navbar data-v-component-menu="header" data-v-slug="main-menu">
+
+        <div class="navbar-brand logo" data-v-component-site>
+          <!-- <a class="navbar-brand" href="/" data-url data-v-url-params='{"host":"www.*.*"}'><span class="visually-hidden">Logo</span> -->
+          <a class="navbar-brand h4 mb-0 text-decoration-none" href="/" data-v-site-url>
+            <span class="visually-hidden">Logo</span>
+            <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo>
+            <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky>
+            <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark>
+            <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky>
+          </a>
+        </div>
+
+        <ul class="navbar-list m-0" data-v-menu-items>
+          <li class="nav-item dropdown position-static" data-v-menu-item data-v-class-if-has-dropdown="category.children &gt; 0" data-v-class-if-position-static="category.has-text">
+
+            <a class="navbar-link dropdown-toggle" data-v-class-if-dropdown-toggle="category.children &gt; 0" data-v-class-if-active="category.active" aria-expanded="false" data-v-menu-item-url>
+              <span data-v-menu-item-name data-v-if-not="category.type = 'text' &amp;&amp; category.name"></span>
+              <span data-v-if="category.content" data-v-menu-item-content>
+                <p>
+                  <img src="/media/vvveb.svg" height="24" alt="" class="me-2">Mega menu
+                </p>
+              </span>
+            </a>
+
+            <div class="dropdown-menu" data-v-menu-item-recursive>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" data-v-class-if-active="category.active &amp;&amp; category.type != 'text'" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'"></span>
+                  <span data-v-if="category.content" data-v-menu-item-content>
+                    <div class="row">
+                      <div class="col-6 align-self-center">
+                        <img src="img/demo/video-1.webp" alt="Post" width="250" loading="lazy" class="rounded img-fluid">
+                      </div>
+                      <div class="col-6">
+                        <h4>Features</h4>
+                        <p class="text-muted">Just a few mentions, but there is more</p>
+                        <ul class="list-unstyled">
+                          <li class="text-primary">Page builder</li>
+                          <li class="text-primary">Mega menu</li>
+                          <li class="text-primary">Multi language</li>
+                          <li class="text-primary">Advanced SEO</li>
+                          <li class="text-primary">Ecommerce</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </span>
+                </a>
+              </div>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-class-if-active="category.active" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown" data-v-menu-item>
+            <a class="navbar-link dropdown-toggle" href="https://blog.vvveb.com" data-v-menu-item-url>
+              <span data-v-menu-item-name>Blog</span>
+            </a>
+
+            <div class="dropdown-menu" data-v-menu-item-recursive>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">User Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+              <div data-v-menu-item class="nav-item" data-v-class-if-dropdown="category.children &gt; 0">
+                <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url>
+                  <span data-v-menu-item-name data-v-if-not="category.type = 'text'">Developer Documentation</span>
+                  <span data-v-menu-item-content></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item" data-v-menu-item>
+            <a class="navbar-link" href="https://www.vvveb.com/page/contact" data-v-menu-item-url>
+              <span data-v-menu-item-name>Contact</span>
+            </a>
+          </li>
+          <li class="nav-item" data-v-menu-item>
+            <a class="navbar-link" href="https://www.vvveb.com" data-v-menu-item-url>
+              <span data-v-menu-item-name>About us</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="/page/contact" class="btn btn-primary">Contact</a>
+
+        <button class="nav-toggle-btn">
+          <span class="line one"></span>
+          <span class="line two"></span>
+          <span class="line three"></span>
+        </button>
+
+      </nav>
+    </div>
+
+  </header>
+
+  <main id="site-content" role="main">
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-7 col-lg-8 col-xl-9">
+
+          <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.webp);">
+            <div class="container">
+
+
+              <div class="row">
+                <div class="col-12">
+
+                  <div class="page-title text-center">
+                    <h2 class="fs-normal" data-v-if="this.search != ''">Results for: <strong data-v-search>term</strong>
+                    </h2>
+                    <h2 class="fs-normal" data-v-if="this.search == ''">No search query provided!</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div>
+            <div data-v-component-products data-v-limit="6" data-v-search="url" data-v-page="url" data-v-type="" data-v-taxonomy_item_id="url" data-v-image_size="medium">
+              <div data-v-component-posts data-v-limit="6" data-v-search="url" data-v-type="">
+
+                <nav>
+                  <div class="nav nav-tabs" id="nav-search" role="tablist">
+
+                    <button class="nav-link" id="nav-products-tab" data-bs-toggle="tab" data-bs-target="#nav-products" type="button" role="tab" aria-controls="nav-products" aria-selected="true" data-v-if="this.type == 'product' || products.count > 0">
+                      <span>Products</span>
+                      <span class="badge bg-body-tertiary border text-body" data-v-products-count>0</span>
+                    </button>
+
+                    <button class="nav-link" id="nav-posts-tab" data-bs-toggle="tab" data-bs-target="#nav-posts" type="button" role="tab" aria-controls="nav-posts" aria-selected="false" data-v-if="this.type == 'post' || posts.count > 0">
+                      <span>Posts</span>
+                      <span class="badge bg-body-tertiary border text-body" data-v-posts-count>0</span>
+                    </button>
+
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-searchContent">
+
+                  <div class="tab-pane" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab" tabindex="0" data-v-if="this.type == 'product' || products.count > 0">
+
+                    <div class="row g-3 my-3">
+                      <div class="col-md-6 col-xl-4" data-v-product>
+                        <div class="product">
+
+                          <article class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <a href="product/product.html" data-v-product-url> </a>
+                            <div class="product-image">
+                              <a href="product/product.html" data-v-product-url>
+
+                                <img src="demo/img/product.webp" loading="lazy" data-v-product-alt alt="" data-v-size="thumb" loading="lazy" data-v-if="prod.image" data-v-product-image />
+                                <img src="/media/placeholder.svg" class="bg-body-tertiary" loading="lazy" alt="" data-v-if-not="prod.image" />
+
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="demo/img/product-2.webp" loading="lazy" data-v-product-alt alt="" loading="lazy" data-v-size="thumb" data-v-product-image-1 />
+                              </a>
+
+
+                              <!-- Favourite -->
+                              <div class="product-favourite">
+                                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url>
+                                  <span></span>
+                                </a>
+                              </div>
+
+                              <!-- Compare -->
+                              <div class="product-compare">
+                                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url>
+                                  <span></span>
+                                </a>
+                              </div>
+
+                              <div class="badges">
+                                <span class="badge text-bg-secondary" data-v-if="prod.old_price > 0">Sale</span>
+                              </div>
+                            </div>
+
+                            <!-- Product Description -->
+                            <div class="product-content">
+
+                              <a href="product/product.html" class="text-body" data-v-product-url>
+                                <span data-v-product-name>Product 8</span>
+                              </a>
+
+                              <p data-v-if="prod.min_price > 0">
+                                <span class="text-muted small">From</span>
+                                <span class="product-price" data-v-product-min_price_tax_formatted>100.0000</span>
+                              </p>
+
+                              <div data-v-if-not="prod.min_price">
+                                <p class="product-price old-price" data-v-if="prod.old_price > 0" data-v-product-old_price_tax_formatted>100.0000</p>
+                                <p class="product-price" data-v-if="prod.price > 0" data-v-product-price_tax_formatted>100.0000</p>
+                              </div>
+
+                              <!-- Hover Content -->
+                              <div class="hover-content" data-v-if="prod.price > 0 && !prod.has_variants">
+                                <!-- Add to Cart -->
+                                <div class="add-to-cart-btn">
+                                  <input type="hidden" name="product_id" value="" data-v-product-product_id />
+
+                                  <a href="#" class="btn btn-secondary btn-sm w-100 disabled" data-v-if="prod.stock_quantity < 1">
+                                    <span class="button-text">
+                                      Out of stock
+                                    </span>
+                                  </a>
+
+                                  <a href="" class="btn btn-primary btn-sm w-100" data-v-if="prod.stock_quantity > 0" data-v-product-add_cart_url data-v-vvveb-action="addToCart" data-product_id="1">
+
+                                    <span class="loading d-none">
+                                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
+                                      <span>Add to cart</span>
+                                    </span>
+
+                                    <span class="button-text">
+                                      <i class="la la-lg la-shopping-bag"></i>
+                                      <span>Add to cart</span>
+                                    </span>
+
+                                  </a>
+                                </div>
+                              </div>
+
+                            </div>
+                          </article>
+
+
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div data-pagination data-v-parent-component="products" data-v-parent-index="0" data-v-parameters='{
+	"type":"product"
+}'>
+
+                      <nav data-v-if="pagecount > 1">
+                        <ul class="pagination pagination-sm justify-content-end pt-2 mt-2" style="border-top: 1px solid var(--bs-border-color);">
+
+                          <!--
+			<li class="page-item pager-first" data-first>
+				<a class="page-link" title="First page" data-page-url data-v-if="current_page > 1">
+					<span aria-hidden="true" class="la la-angle-double-left"></span>
+					<span class="sr-only">First</span>
+				</a>
+			</li>
+			-->
+
+                          <li class="page-item pager-prev lh-1" data-prev>
+
+                            <a class="page-link" aria-label="Previous" title="Previous page" data-page-url data-scroll="start" data-v-if="current_page > 1">
+                              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg> -->
+                              <span aria-hidden="true" class="la la-arrow-left la-lg"></span>
+                              <!-- <span>Newer Posts</span> -->
+                            </a>
+
+                          </li>
+
+
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">1</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">2</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">3</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">4</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">5</a>
+                          </li>
+
+                          <li class="page-item pager-next" data-next>
+                            <a class="page-link lh-1" aria-label="Next" title="Next page" data-page-url data-scroll="start" data-v-if="current_page < pagecount">
+                              <!-- <span>Older Posts</span> -->
+                              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg> -->
+                              <span aria-hidden="true" class="la la-arrow-right la-lg"></span>
+                            </a>
+                          </li>
+
+                          <!--
+			<li class="page-item pager-last" data-last>
+				<a class="page-link" title="Last page" data-page-url data-v-if="current_page < pagecount">
+				<span aria-hidden="true" class="la la-angle-double-right"></span>
+					<span class="sr-only">Last</span>
+				</a>
+			</li>
+			-->
+
+                        </ul>
+                      </nav>
+                    </div>
+
+
+                  </div>
+
+                  <div class="tab-pane" id="nav-posts" role="tabpanel" aria-labelledby="nav-posts-tab" tabindex="0" data-v-if="this.type == '' || this.type == 'post'">
+                    <div class="row g-3 my-3">
+                      <div class="col-12 col-lg-4 mb-2" data-v-post>
+                        <article class="card h-100">
+                          <div class="card-img-top" data-v-if="post.image">
+                            <img src="demo/img/video-1.webp" alt="" class="w-100" loading="lazy" data-v-size="thumb" data-v-post-image>
+                          </div>
+                          <!-- Post Title -->
+                          <a data-v-post-url>
+                            <div class="card-body p-4">
+                              <div class="post-title card-title">
+                                <h3 class="h4 mb-3" data-v-post-name>
+                                  Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et malesuada
+                                </h3>
+                              </div>
+                              <!-- Hover Content -->
+                              <p class="card-text text-muted" data-v-post-excerpt>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus purus dignissim convallis.</p>
+                              <button title="{$post.name}" role="button" class="btn btn-link px-0">
+                                <span>Read more</span>
+                                <i class="la la-angle-right"></i>
+                              </button>
+                            </div>
+                          </a>
+                        </article>
+
+                      </div>
+
+
+                    </div>
+
+                    <div data-pagination data-v-parent-component="posts" data-v-parent-index="0" data-v-parameters='{
+	"type":"post"
+}'>
+
+                      <nav data-v-if="pagecount > 1">
+                        <ul class="pagination pagination-sm justify-content-end pt-2 mt-2" style="border-top: 1px solid var(--bs-border-color);">
+
+                          <!--
+			<li class="page-item pager-first" data-first>
+				<a class="page-link" title="First page" data-page-url data-v-if="current_page > 1">
+					<span aria-hidden="true" class="la la-angle-double-left"></span>
+					<span class="sr-only">First</span>
+				</a>
+			</li>
+			-->
+
+                          <li class="page-item pager-prev lh-1" data-prev>
+
+                            <a class="page-link" aria-label="Previous" title="Previous page" data-page-url data-scroll="start" data-v-if="current_page > 1">
+                              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg> -->
+                              <span aria-hidden="true" class="la la-arrow-left la-lg"></span>
+                              <!-- <span>Newer Posts</span> -->
+                            </a>
+
+                          </li>
+
+
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">1</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">2</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">3</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">4</a>
+                          </li>
+                          <li class="page-item" data-page>
+                            <a class="page-link" data-page-no data-page-url data-scroll="start">5</a>
+                          </li>
+
+                          <li class="page-item pager-next" data-next>
+                            <a class="page-link lh-1" aria-label="Next" title="Next page" data-page-url data-scroll="start" data-v-if="current_page < pagecount">
+                              <!-- <span>Older Posts</span> -->
+                              <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="21"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg> -->
+                              <span aria-hidden="true" class="la la-arrow-right la-lg"></span>
+                            </a>
+                          </li>
+
+                          <!--
+			<li class="page-item pager-last" data-last>
+				<a class="page-link" title="Last page" data-page-url data-v-if="current_page < pagecount">
+				<span aria-hidden="true" class="la la-angle-double-right"></span>
+					<span class="sr-only">Last</span>
+				</a>
+			</li>
+			-->
+
+                        </ul>
+                      </nav>
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+
+
+                <div data-v-if="products.count < 1 && posts.count < 1">
+                  <h3 class="text-center py-4 bg-body-tertiary">No matching results!</h3>
+                </div>
+
+
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <aside class="col-md-5 col-lg-4 col-xl-3 sidebar" role="sidebar" data-v-save-global="content/index.html,aside.sidebar">
+
+          <div class="sidebar-sticky">
+            <!-- Search Widget -->
+            <div class="card">
+              <!-- h6 class="card-header">Search</h6 -->
+              <div class="card-body">
+                <form method="get" action="/search">
+                  <!-- <input type="hidden" name="type" value="posts"> -->
+                  <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search for...">
+                    <button class="btn btn-secondary btn-sm" type="submit">
+                      <!-- 
+					<div class="la-flip-horizontal">
+						<i class="la la-search  la-flip-horizontal"></i>
+					</div> 
+					-->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 512 512">
+                        <path d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29 448 448" />
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- About Widget -->
+            <div class="card" data-v-component-site>
+              <h6 class="card-header">About</h6>
+              <div class="card-body" data-v-site-description-description>
+                Powerful and easy to use drag and drop website builder for blogs, presentation or ecommerce stores.
+              </div>
+            </div>
+
+            <!-- Recent posts Widget -->
+            <div class="card archives-widget" data-v-component-posts="recent-posts-sidebar" data-v-page="1" data-v-limit="4">
+              <div>
+                <h6 class="card-header">Recent posts</h6>
+                <div class="card-body">
+                  <div data-v-post>
+                    <i class="la la-comment"></i>
+                    <a href="content/post.html" data-v-post-url>
+                      <span data-v-post-name>January 2021</span>
+                    </a>
+                  </div>
+                  <div data-v-post>
+                    <i class="la la-comment"></i>
+                    <a href="content/post.html" data-v-post-url>
+                      <span data-v-post-name>January 2021</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent comments Widget -->
+            <div class="card archives-widget" data-v-component-comments="recent-comments-sidebar" data-v-page="1" data-v-limit="4" data-v-post_title="true" data-v-order="desc">
+              <div>
+                <h6 class="card-header">Recent comments</h6>
+                <div class="card-body">
+                  <div data-v-comment>
+                    <span data-v-comment-author>John Doe</span>
+                    <span>on</span>
+                    <a href="content/post.html#comments" data-v-comment-url>
+                      <span data-v-comment-name>Post name</span>
+                    </a>
+                  </div>
+                  <div data-v-comment>
+                    <span data-v-comment-author>John Doe</span> on
+                    <a href="content/post.html#comments" data-v-comment-url>
+                      <span data-v-comment-name>Post name</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="card categories-widget" data-v-component-content-categories="sidebar" data-v-type="categories" data-v-post_type="post">
+              <div>
+                <h6 class="card-header">Categories</h6>
+                <div class="card-body">
+                  <ul data-v-cats>
+                    <li data-v-cat>
+                      <a href="content/category.html" data-v-cat-url data-v-cat-name>Web Design</a>
+                    </li>
+                    <li data-v-cat>
+                      <a href="content/category.html" data-v-cat-url data-v-cat-name>HTML</a>
+                    </li>
+                    <li data-v-cat>
+                      <a href="content/category.html" data-v-cat-url data-v-cat-name>Freebies</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Archives Widget -->
+            <div class="card archives-widget" data-v-component-content-archives="sidebar">
+              <div>
+                <h6 class="card-header">Archives</h6>
+                <div class="card-body">
+                  <ul data-v-archives>
+                    <li data-v-archive>
+                      <a href="content/archive.html" data-v-archive-url>
+                        <span data-v-archive-name>January 2021</span>
+                      </a>
+                    </li>
+                    <li data-v-archive>
+                      <a href="content/archive.html" data-v-archive-url>
+                        <span data-v-archive-name>December 2020</span>
+                      </a>
+                    </li>
+                    <li data-v-archive>
+                      <a href="content/archive.html" data-v-archive-url>
+                        <span data-v-archive-name>November 2018</span>
+                      </a>
+                    </li>
+                    <li data-v-archive>
+                      <a href="content/archive.html" data-v-archive-url>
+                        <span data-v-archive-name>October 2018</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Popular tags Widget -->
+            <div class="card tags-widget" data-v-component-content-categories="sidebar" data-v-type="tags" data-v-post_type="post">
+              <div>
+                <h6 class="card-header">Popular tags</h6>
+                <div class="card-body">
+                  <ul data-v-cats class="tags">
+                    <li data-v-cat>
+                      <a href="content/tag.html" data-v-cat-url data-v-cat-name>January 2021</a>
+                    </li>
+                    <li data-v-cat>
+                      <a href="content/tag.html" data-v-cat-url data-v-cat-name>December 2020</a>
+                    </li>
+                    <li data-v-cat>
+                      <a href="content/tag.html" data-v-cat-url data-v-cat-name>November 2018</a>
+                    </li>
+                    <li data-v-cat>
+                      <a href="content/tag.html" data-v-cat-url data-v-cat-name>October 2018</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Archives Widget Select -->
+            <div class="card archives-widget" data-v-component-content-archives="sidebar">
+              <div>
+                <h6 class="card-header">Archives</h6>
+                <div class="card-body">
+                  <select class="form-control" onchange="window.location.href = this.value" data-v-archives>
+                    <option class="text-muted">
+                      <span>Select month</span>
+                    </option>
+
+                    <option data-v-archive value="content/archive.html">
+                      <span data-v-archive-name>January 2021</span>
+                    </option>
+
+                    <option data-v-archive value="content/archive.html">
+                      <span data-v-archive-name>December 2020</span>
+                    </option>
+
+                    <option data-v-archive value="content/archive.html">
+                      <span data-v-archive-name>November 2018</span>
+                    </option>
+
+                    <option data-v-archive value="content/archive.html">
+                      <span data-v-archive-name>October 2018</span>
+                    </option>
+                  </select>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </aside>
+
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+  </main>
+
+  <footer data-v-save-global="index.html,footer">
+    <div class="container">
+      <div class="navbar-brand logo" data-v-component-site>
+        <!-- <a class="navbar-brand" href="/" data-url data-v-url-params='{"host":"www.*.*"}'><span class="visually-hidden">Logo</span> -->
+        <a class="navbar-brand h4 mb-0 text-decoration-none" href="/" data-v-site-url>
+          <span class="visually-hidden">Logo</span>
+          <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo>
+          <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky>
+          <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark>
+          <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky>
+        </a>
+      </div>
+
+      <ul class="footer-nav">
+
+        <li>
+          <a href="/about">About</a>
+        </li>
+
+        <li>
+          <a href="/page/services">Services</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+      </ul>
+
+      <div class="social-links">
+
+        <a href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+
+        <a href="#">
+          <ion-icon name="logo-pinterest"></ion-icon>
+        </a>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body" style="--bs-modal-padding: 0.7rem;">
+
+          <form action="/search" method="get">
+            <input type="hidden" name="route" value="search">
+            <div class="input-group">
+              <input type="search" name="search" class="form-control form-control-lg border-primary border-2" id="headerSearch" placeholder="Start typing to search" data-v-vvveb-action="search" data-selector=".search-results" data-v-vvveb-on="keyup">
+              <button class="btn btn-outline-primary border-2 border-start-0" type="submit" title="Search">
+
+                <div class="la-flip-horizontal">
+                  <i class="la la-search la-lg" aria-hidden="true"></i>
+                </div>
+              </button>
+              <button type="button" class="btn-close small ms-2" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="loading d-none d-flex justify-content-center m-5">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </form>
+
+          <div class="search-results">
+
+            <div data-v-component-products data-v-limit="6" data-v-search="url" data-v-search_boolean="true" data-v-page="url" data-v-type="" data-v-taxonomy_item_id="url" data-v-image_size="thumb">
+              <div data-v-component-posts data-v-limit="6" data-v-search="url" data-v-search_boolean="true" data-v-type="" data-v-image_size="thumb">
+
+                <div class="products mt-2" data-v-if="products.search && products.count > 0">
+                  <div class="small text-muted my-2">Products</div>
+                  <div class="card">
+                    <div class="search-item" data-v-product>
+                      <a href="" data-bs-dismiss="modal" data-v-product-url>
+                        <img src="demo/img/product.webp" width="48" data-v-product-image>
+                        <svg class="me-1" height="48" width="48" data-v-if-not="prod.image">
+                          <rect width="100%" height="100%" fill="#eee"></rect>
+                        </svg>
+                        <span data-v-product-name>Product</span>
+                        <span class="p-2 small text-muted float-end " data-v-if="prod.price > 0" data-v-product-price_tax_formatted="">$256.99</span>
+                      </a>
+                    </div>
+                    <div class="search-item" data-v-product>
+                      <a href="" data-v-product-url>
+                        <img src="demo/img/product.webp" width="48" data-v-product-image>
+                        <span data-v-product-name>Product</span>
+                        <span class="p-2 small text-muted float-end " data-v-if="prod.price > 0" data-v-product-price_tax_formatted="">$256.99</span>
+                      </a>
+                    </div>
+                    <div class="search-item" data-v-product>
+                      <a href="" data-v-product-url>
+                        <img src="demo/img/product.webp" width="48" data-v-product-image>
+                        <span data-v-product-name>Product</span>
+                        <span class="p-2 small text-muted float-end " data-v-if="prod.price > 0" data-v-product-price_tax_formatted="">$256.99</span>
+                      </a>
+                    </div>
+
+                    <div class="small p-1" data-v-if="products.count <= 0">
+                      No products found!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="posts mt-2" data-v-if="posts.search">
+                  <div class="small text-muted my-2">Pages</div>
+                  <div class="card">
+                    <div class="search-item" data-v-post>
+                      <a href="" data-bs-dismiss="modal" data-v-post-url class="flex">
+                        <img src="demo/img/video-1.webp" width="48" data-v-post-image data-v-if="post.image">
+                        <svg class="me-1" height="48" width="48" data-v-if-not="post.image">
+                          <rect width="100%" height="100%" fill="#eee"></rect>
+                        </svg>
+                        <span data-v-post-name>Post</span>
+                      </a>
+                    </div>
+                    <div class="search-item" data-v-post>
+                      <a href="" data-v-post-url class="flex">
+                        <img src="demo/img/video-1.webp" width="48" data-v-post-image data-v-if="post.image">
+                        <span data-v-post-name>Post</span>
+                      </a>
+                    </div>
+                    <div class="search-item" data-v-post>
+                      <a href="" data-v-post-url class="flex">
+                        <img src="demo/img/video-1.webp" width="48" data-v-post-image data-v-if="post.image">
+                        <span data-v-post-name>Post</span>
+                      </a>
+                    </div>
+                    <div class="p-3 alert-warning text-center" data-v-if="posts.count <= 0">
+                      No posts found!
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    - custom script
+  -->
+
+  <script>
+
+    // navbar variable
+
+    const nav = document.querySelector(".navbar-nav");
+    const navToggleBtn = document.querySelector(".nav-toggle-btn");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // navbar toggle function
+    const navToggleFunc = function () {
+      nav.classList.toggle('active');
+      navToggleBtn.classList.toggle('active');
+    }
+
+    navToggleBtn.addEventListener('click', navToggleFunc);
+
+    for (let i = 0; i < navLinks.length; i++) {
+
+      navLinks[i].addEventListener('click', navToggleFunc);
+
+    }
+
+  </script>
+
+
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+  <div class="alert alert-light alert-dismissible fade alert-top" role="alert" style="display:none">
+    <div class="container">
+
+      <div class="message">
+        Product was added to cart.
+      </div>
+
+
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <form action="/search" method="get">
+            <input type="hidden" name="route" value="search">
+            <div class="input-group">
+              <input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-selector=".search-results" data-v-vvveb-on="keyup">
+              <button class="btn btn-outline-primary border" type="submit" title="Search">
+                <div class="la-flip-horizontal">
+                  <i class="la la-search la-lg" aria-hidden="true"></i>
+                </div>
+              </button>
+            </div>
+          </form>
+
+          <div class="search-results">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-loading-status" class="progress top-0 position-fixed progress-bar" role="progressbar" aria-label="Page loading status" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="z-index: 10;--bs-progress-bg: transparent;--bs-progress-height: 1px;width:0%"></div>
+
+
+  <script id="app-js" src="/js/app.js"></script>
+  <script id="theme-js" src="/js/app/theme.js"></script>
+  <script id="cart-js" src="/js/app/cart.js"></script>
+
+  <script>
+bootstrap.Tab.getOrCreateInstance('#nav-search button').show();
+</script>
+</body>
+
+</html>

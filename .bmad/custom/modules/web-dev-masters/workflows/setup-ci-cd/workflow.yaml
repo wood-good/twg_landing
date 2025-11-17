@@ -1,0 +1,9 @@
+# Setup CI/CD Workflow
+name: setup-ci-cd
+description: "Automated testing and deployment pipeline with GitHub Actions/GitLab CI"
+author: "Colonel Forge"
+config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
+installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/setup-ci-cd"
+template: false
+instructions: "{installed_path}/instructions.md"
+standalone: true
