@@ -20,5 +20,8 @@ config/site.php merge=ours
 .env.local merge=ours
 .env.production merge=ours
 
+# Branch-specific theme colors - KEEP YOUR OWN VERSION on merge
+public/vvveb/public/themes/landing/css/theme-config.css merge=ours
+
 # Ensure LF line endings for scripts
 *.sh text eol=lf

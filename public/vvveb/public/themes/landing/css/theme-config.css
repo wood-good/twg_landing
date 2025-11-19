@@ -1,0 +1,179 @@
+/**
+ * Theme Configuration - Color Palette & Brand Variables
+ *
+ * THIS FILE IS BRANCH-SPECIFIC
+ * ============================
+ * Each site branch (twg, other-brand) maintains its own version.
+ * When merging from main, KEEP YOUR LOCAL VERSION of this file.
+ *
+ * Git strategy: Add to .gitattributes with merge=ours
+ * Or mark as "assume-unchanged" in branch-specific workflows
+ *
+ * @version 1.0.0
+ * @branch main (template - copy and customize for each site)
+ */
+
+:root {
+  /* ============================================
+     PRIMARY BRAND COLORS
+     ============================================ */
+
+  /* Main brand color - used for accents, CTAs, highlights */
+  --color-primary: #d4af37;           /* Gold */
+  --color-primary-hover: #b8960f;     /* Darker gold */
+  --color-primary-light: #f5e6b3;     /* Light gold tint */
+
+  /* Secondary brand color */
+  --color-secondary: #1a1a1a;         /* Near black */
+  --color-secondary-hover: #333333;   /* Dark gray */
+  --color-secondary-light: #4a4a4a;   /* Medium gray */
+
+  /* ============================================
+     NEUTRAL COLORS
+     ============================================ */
+
+  /* Background colors */
+  --color-bg-primary: #ffffff;        /* Main background */
+  --color-bg-secondary: #f8f7f5;      /* Off-white sections */
+  --color-bg-dark: #1a1a1a;           /* Dark sections/footer */
+  --color-bg-overlay: rgba(0, 0, 0, 0.5); /* Hero overlay */
+
+  /* Text colors */
+  --color-text-primary: #1a1a1a;      /* Main text */
+  --color-text-secondary: #555555;    /* Secondary text */
+  --color-text-muted: #888888;        /* Muted/caption text */
+  --color-text-light: #ffffff;        /* Text on dark bg */
+  --color-text-light-muted: rgba(255, 255, 255, 0.7); /* Muted on dark */
+
+  /* Border colors */
+  --color-border: #e0e0e0;            /* Default borders */
+  --color-border-light: #f0f0f0;      /* Light borders */
+  --color-border-dark: rgba(255, 255, 255, 0.1); /* Borders on dark bg */
+
+  /* ============================================
+     UI STATE COLORS
+     ============================================ */
+
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+
+  /* ============================================
+     COMPONENT-SPECIFIC COLORS
+     ============================================ */
+
+  /* Buttons */
+  --btn-primary-bg: transparent;
+  --btn-primary-text: var(--color-secondary);
+  --btn-primary-border: var(--color-secondary);
+  --btn-primary-hover-bg: var(--color-secondary);
+  --btn-primary-hover-text: var(--color-text-light);
+
+  --btn-accent-bg: transparent;
+  --btn-accent-text: var(--color-primary);
+  --btn-accent-border: var(--color-primary);
+  --btn-accent-hover-bg: var(--color-primary);
+  --btn-accent-hover-text: var(--color-secondary);
+
+  /* Navbar */
+  --navbar-bg: transparent;
+  --navbar-bg-scrolled: rgba(255, 255, 255, 0.98);
+  --navbar-text: var(--color-text-light);
+  --navbar-text-scrolled: var(--color-text-primary);
+  --navbar-text-hover: var(--color-primary);
+
+  /* Footer */
+  --footer-bg: var(--color-bg-dark);
+  --footer-text: var(--color-text-light);
+  --footer-text-muted: var(--color-text-light-muted);
+  --footer-link-hover: var(--color-primary);
+
+  /* Hero */
+  --hero-bg: var(--color-bg-dark);
+  --hero-text: var(--color-text-light);
+  --hero-overlay: var(--color-bg-overlay);
+
+  /* Scroll progress bar */
+  --progress-bar-color: var(--color-primary);
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* ============================================
+     SPACING & SIZING
+     ============================================ */
+
+  --section-padding-y: 8rem;
+  --section-padding-y-mobile: 4rem;
+  --container-max-width: 1200px;
+
+  /* ============================================
+     EFFECTS
+     ============================================ */
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.08);
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Uncomment and customize if you want automatic dark mode
+    --color-bg-primary: #121212;
+    --color-bg-secondary: #1e1e1e;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #b0b0b0;
+    */
+  }
+}
+
+/* ============================================
+   BRAND VARIANT EXAMPLES
+   ============================================
+
+   Copy this file to each branch and modify colors:
+
+   Example for a "Modern Industrial" brand:
+   --color-primary: #ff6b35;
+   --color-secondary: #2d3436;
+   --color-bg-secondary: #f5f6fa;
+
+   Example for a "Luxury Minimal" brand:
+   --color-primary: #c9a962;
+   --color-secondary: #0a0a0a;
+   --color-bg-secondary: #fafafa;
+
+   Example for a "Eco Natural" brand:
+   --color-primary: #4a7c59;
+   --color-secondary: #2c3e50;
+   --color-bg-secondary: #f0f4f0;
+
+   ============================================ */

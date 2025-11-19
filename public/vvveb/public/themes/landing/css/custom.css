@@ -4,32 +4,34 @@
    ======================================== */
 
 /* === Color Palette (Moooi Style) === */
+/* NOTE: Primary colors are now defined in theme-config.css for branch-specific theming.
+   These legacy variables are kept for backward compatibility with existing components. */
 :root {
-  /* Primary Colors - Refined Neutrals */
-  --twg-white: #ffffff;
+  /* Legacy variables mapped to theme-config (for backward compatibility) */
+  --twg-white: var(--color-bg-primary, #ffffff);
   --twg-black: #000000;
-  --twg-off-white: #eeece7;
-  --twg-charcoal: #2a2a2a;
+  --twg-off-white: var(--color-bg-secondary, #f8f7f5);
+  --twg-charcoal: var(--color-secondary, #1a1a1a);
 
   /* Accent Colors */
   --twg-oak-honey: #b8956a;
-  --twg-gold: #d4af37;
+  --twg-gold: var(--color-primary, #d4af37);
   --twg-forest-green: #2f4538;
 
   /* Grey Tones */
-  --twg-grey-dark: #4a4a4a;
-  --twg-grey-mid: #8a8a8a;
-  --twg-grey-light: #d1d1d1;
-  --twg-grey-lighter: #f5f5f5;
+  --twg-grey-dark: var(--color-text-secondary, #555555);
+  --twg-grey-mid: var(--color-text-muted, #888888);
+  --twg-grey-light: var(--color-border, #e0e0e0);
+  --twg-grey-lighter: var(--color-bg-secondary, #f8f7f5);
 
   /* Override Bootstrap */
-  --bs-primary: #000000;
-  --bs-primary-rgb: 0, 0, 0;
-  --bs-secondary: #d4af37;
-  --bs-body-bg: #ffffff;
-  --bs-body-color: #2a2a2a;
-  --bs-link-color: #000000;
-  --bs-link-hover-color: #d4af37;
+  --bs-primary: var(--color-secondary, #1a1a1a);
+  --bs-primary-rgb: 26, 26, 26;
+  --bs-secondary: var(--color-primary, #d4af37);
+  --bs-body-bg: var(--color-bg-primary, #ffffff);
+  --bs-body-color: var(--color-text-primary, #1a1a1a);
+  --bs-link-color: var(--color-secondary, #1a1a1a);
+  --bs-link-hover-color: var(--color-primary, #d4af37);
 }
 
 /* === Typography (Editorial Sophistication) === */

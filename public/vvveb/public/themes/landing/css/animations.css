@@ -1,0 +1,750 @@
+/**
+ * Cinematic Animation Styles for The Wood and Good
+ *
+ * Complementary CSS for GSAP animations.
+ * Contains base states, transitions, and visual effects.
+ *
+ * @author Development Team
+ * @version 1.0.0
+ */
+
+/* ============================================
+   1. BASE ANIMATION STATES
+   ============================================ */
+
+/* Elements that will be animated should start invisible */
+[data-animate],
+[data-animate-child] {
+  opacity: 0;
+}
+
+/* Once GSAP initializes, it handles opacity */
+.gsap-ready [data-animate],
+.gsap-ready [data-animate-child] {
+  opacity: 1;
+}
+
+/* ============================================
+   2. HERO SECTION - CINEMATIC STYLE
+   ============================================ */
+
+.hero-cover {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--hero-bg, #1a1a1a);
+}
+
+/* Video background container */
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Image parallax background */
+.hero-parallax-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Dark overlay for text readability */
+.hero-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 2;
+}
+
+/* Hero content positioning */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 900px;
+  padding: 2rem;
+  color: var(--hero-text, #fff);
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-content .lead {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.85;
+}
+
+/* ============================================
+   3. PARALLAX SECTIONS
+   ============================================ */
+
+[data-parallax] {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: -30%;
+  left: 0;
+  width: 100%;
+  height: 160%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+/* ============================================
+   4. CONTENT BLOCKS - ALTERNATING LAYOUT
+   ============================================ */
+
+.content-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.content-block.reverse {
+  direction: rtl;
+}
+
+.content-block.reverse > * {
+  direction: ltr;
+}
+
+.content-block-text {
+  padding: 2rem 0;
+}
+
+.content-block-text h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.content-block-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-secondary, #555);
+}
+
+/* Responsive content blocks */
+@media (max-width: 991px) {
+  .content-block {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .content-block.reverse {
+    direction: ltr;
+  }
+}
+
+/* ============================================
+   5. IMAGE REVEAL EFFECT
+   ============================================ */
+
+[data-reveal-image] {
+  overflow: hidden;
+  position: relative;
+}
+
+[data-reveal-image] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* Optional: Mask reveal from direction */
+[data-reveal-image="left"]::before,
+[data-reveal-image="right"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
+  transform-origin: right;
+}
+
+[data-reveal-image="left"]::before {
+  left: 0;
+  transform-origin: right;
+}
+
+[data-reveal-image="right"]::before {
+  right: 0;
+  transform-origin: left;
+}
+
+/* ============================================
+   6. PINNED SECTION STYLES
+   ============================================ */
+
+[data-pin] {
+  position: relative;
+  min-height: 100vh;
+}
+
+.pin-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.pin-panel:first-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   7. SECTION STYLES
+   ============================================ */
+
+.section-moooi {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--color-text-secondary, #666);
+  line-height: 1.8;
+}
+
+.section-centered {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bg-off-white {
+  background-color: var(--color-bg-secondary, #f8f7f5);
+}
+
+/* ============================================
+   8. BUTTON STYLES (Moooi-inspired)
+   ============================================ */
+
+.btn-moooi {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--btn-primary-border, #1a1a1a);
+  background: var(--btn-primary-bg, transparent);
+  color: var(--btn-primary-text, #1a1a1a);
+  transition: all var(--transition-slow, 0.4s cubic-bezier(0.4, 0, 0.2, 1));
+  cursor: pointer;
+  will-change: transform;
+}
+
+.btn-moooi:hover {
+  background: var(--btn-primary-hover-bg, #1a1a1a);
+  color: var(--btn-primary-hover-text, #fff);
+}
+
+.btn-moooi-gold {
+  border-color: var(--btn-accent-border, #b8860b);
+  color: var(--btn-accent-text, #b8860b);
+}
+
+.btn-moooi-gold:hover {
+  background: var(--btn-accent-hover-bg, #b8860b);
+  color: var(--btn-accent-hover-text, #fff);
+}
+
+/* Light version for dark backgrounds */
+.hero-content .btn-moooi {
+  border-color: var(--color-text-light, #fff);
+  color: var(--color-text-light, #fff);
+}
+
+.hero-content .btn-moooi:hover {
+  background: var(--color-text-light, #fff);
+  color: var(--color-secondary, #1a1a1a);
+}
+
+.hero-content .btn-moooi-gold {
+  border-color: var(--color-primary, #d4af37);
+  color: var(--color-primary, #d4af37);
+}
+
+.hero-content .btn-moooi-gold:hover {
+  background: var(--color-primary, #d4af37);
+  color: var(--color-secondary, #1a1a1a);
+}
+
+/* ============================================
+   9. NAVBAR STYLES
+   ============================================ */
+
+.navbar-moooi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all var(--transition-slow, 0.4s cubic-bezier(0.4, 0, 0.2, 1));
+  background: var(--navbar-bg, transparent);
+}
+
+.navbar-moooi.scrolled {
+  background: var(--navbar-bg-scrolled, rgba(255, 255, 255, 0.98));
+  padding: 1rem 0;
+  box-shadow: var(--shadow-navbar, 0 2px 20px rgba(0, 0, 0, 0.08));
+}
+
+.navbar-moooi .navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--navbar-text, #fff);
+  text-decoration: none;
+  transition: color var(--transition-normal, 0.3s ease);
+}
+
+.navbar-moooi.scrolled .navbar-brand {
+  color: var(--navbar-text-scrolled, #1a1a1a);
+}
+
+.navbar-moooi .nav-link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navbar-text, rgba(255, 255, 255, 0.9));
+  padding: 0.5rem 1rem;
+  transition: color var(--transition-normal, 0.3s ease);
+}
+
+.navbar-moooi.scrolled .nav-link {
+  color: var(--navbar-text-scrolled, #1a1a1a);
+}
+
+.navbar-moooi .nav-link:hover {
+  color: var(--navbar-text-hover, #d4af37);
+}
+
+/* Mobile toggle */
+.navbar-moooi .navbar-toggler {
+  border: none;
+  padding: 0;
+}
+
+.navbar-moooi .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-moooi.scrolled .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26, 26, 26, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ============================================
+   10. FOOTER STYLES
+   ============================================ */
+
+.footer-moooi {
+  background: var(--footer-bg, #1a1a1a);
+  color: var(--footer-text, #fff);
+  padding: 5rem 0 2rem;
+}
+
+.footer-moooi h5 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer-moooi a {
+  display: block;
+  color: var(--footer-text-muted, rgba(255, 255, 255, 0.7));
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  transition: color var(--transition-normal, 0.3s ease);
+}
+
+.footer-moooi a:hover {
+  color: var(--footer-link-hover, #d4af37);
+}
+
+.footer-bottom {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border-dark, rgba(255, 255, 255, 0.1));
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: var(--footer-text-muted, rgba(255, 255, 255, 0.5));
+}
+
+/* ============================================
+   11. SMOOTH SCROLL BEHAVIOR
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   12. RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 767px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .section-moooi {
+    padding: 4rem 0;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+  }
+
+  .btn-moooi {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ============================================
+   13. REDUCED MOTION SUPPORT
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   14. LOADING STATE
+   ============================================ */
+
+/* Hide content until GSAP initializes to prevent flash */
+body:not(.gsap-ready) .hero-content,
+body:not(.gsap-ready) .content-block,
+body:not(.gsap-ready) .section-title {
+  opacity: 0;
+}
+
+/* ============================================
+   15. HORIZONTAL SCROLL GALLERY
+   ============================================ */
+
+[data-horizontal-scroll] {
+  overflow: hidden;
+  width: 100%;
+}
+
+.horizontal-track {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 0;
+  will-change: transform;
+}
+
+.horizontal-item {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 500px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.horizontal-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .horizontal-item {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+/* ============================================
+   16. SCROLL PROGRESS BAR
+   ============================================ */
+
+[data-scroll-progress] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--progress-bar-color, #d4af37);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999;
+}
+
+/* ============================================
+   17. MARQUEE / INFINITE SCROLL
+   ============================================ */
+
+[data-marquee] {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+
+.marquee-content {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 2rem;
+}
+
+.marquee-content span {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-secondary, #1a1a1a);
+  opacity: 0.1;
+}
+
+/* ============================================
+   18. COUNTER STYLES
+   ============================================ */
+
+[data-counter] {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--color-text-primary, #1a1a1a);
+}
+
+/* ============================================
+   19. MAGNETIC BUTTON WRAPPER
+   ============================================ */
+
+[data-magnetic] {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ============================================
+   20. TEXT SPLIT STYLES
+   ============================================ */
+
+.split-char,
+.split-word {
+  will-change: transform, opacity;
+}
+
+/* ============================================
+   21. GRID REVEAL STYLES
+   ============================================ */
+
+[data-grid-reveal] {
+  display: grid;
+  gap: 2rem;
+}
+
+[data-grid-reveal="2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+[data-grid-reveal="3"] {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+[data-grid-reveal="4"] {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item {
+  background: var(--color-bg-secondary, #f8f7f5);
+  border-radius: var(--radius-sm, 4px);
+  overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  [data-grid-reveal="3"],
+  [data-grid-reveal="4"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  [data-grid-reveal] {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   22. VIDEO BACKGROUND ENHANCEMENTS
+   ============================================ */
+
+.hero-video-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Ensure video covers on all devices */
+@media (min-aspect-ratio: 16/9) {
+  .hero-video-bg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .hero-video-bg {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* ============================================
+   23. PINNED SECTION ENHANCEMENTS
+   ============================================ */
+
+[data-pin] {
+  background: #fff;
+}
+
+.pin-panel {
+  padding: 4rem;
+  text-align: center;
+}
+
+.pin-panel h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.pin-panel p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-text-secondary, #666);
+}
+
+/* ============================================
+   24. ADDITIONAL UTILITY CLASSES
+   ============================================ */
+
+/* Brand accent color for text */
+.text-gold {
+  color: var(--color-primary, #d4af37);
+}
+
+/* For elements that should fade on scroll */
+.fade-on-scroll {
+  will-change: opacity;
+}
+
+/* For elements with transform animations */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Overflow hidden utility for reveals */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ============================================
+   25. PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Promote animated elements to their own layer */
+[data-animate],
+[data-animate-child],
+[data-parallax] .parallax-bg,
+.hero-video-bg,
+.horizontal-track {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
