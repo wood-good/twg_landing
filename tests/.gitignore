@@ -1,0 +1,10 @@
+# Test results
+results/
+*.mp4
+*.webm
+*.png
+
+# Playwright
+.playwright/
+playwright-report/
+test-results/
