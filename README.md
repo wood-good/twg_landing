@@ -1,281 +1,308 @@
-# The Wood and Good - Landing Site
+# The Wood and Good - Landing Page
 
-> **"Where Forest Meets Forever"**
-> Premium B2B website for TWG - artisanal oak table makers inspiring people to live differently through timeless craftsmanship.
-
----
-
-## Overview
-
-**TWG (The Wood and Good)** is a luxury oak table manufacturer with three generations of craftsmanship experience. This website embodies their philosophy of mindful, intentional living through carefully crafted digital experiences.
-
-### Design Philosophy
-- **Inspirational, not transactional** - We inspire perspective, not push products
-- **Premium aesthetics** - Creative luxury for curated living
-- **Timeless over trendy** - Built to endure
-- **Generous whitespace** - Space signals value and intentionality
-
-### Technology Platform
-- **VVVeb CMS** - Visual page builder and content management
-- **Custom Theme** - Premium TWG landing theme
-- **Docker** - Containerized development environment
-- **PHP 8.1 + MySQL** - Modern stack
+Premium oak furniture website built with VVVeb CMS.
 
 ---
 
 ## Quick Start
 
-### Prerequisites
-- Docker Desktop
-- Git
-
-### Installation
-
+### Start Development Environment
 ```bash
-# Clone repository
-git clone <repository-url>
-cd twg_landing
-
-# Start environment
 ./start-dev.sh
-
-# Access the site
-open http://localhost:8080
 ```
 
-### Access Points
-- **Website**: http://localhost:8080/
-- **VVVeb Admin**: http://localhost:8080/cms/admin/
-  - Email: `admin@thewoodandgood.com`
-  - Password: `TWGAdmin2024`
-- **phpMyAdmin**: http://localhost:8081/
-  - User: `root`, Password: `root_password`
-
-### Stop Environment
+### Stop Development Environment
 ```bash
 ./stop-dev.sh
 ```
 
 ---
 
+## Access URLs
+
+| Service | URL | Purpose |
+|---------|-----|---------|
+| **Website** | http://localhost:8080/ | Public-facing site |
+| **VVVeb Admin** | http://localhost:8080/admin/ | CMS dashboard |
+| **phpMyAdmin** | http://localhost:8081 | Database management |
+| **MySQL** | localhost:3306 | Direct database access |
+
+---
+
+## Database Credentials
+
+```
+Database: vvveb_db
+Username: vvveb_user
+Password: vvveb_pass
+Root Password: root_password
+```
+
+---
+
+## First Time Setup
+
+1. **Start containers**:
+   ```bash
+   ./start-dev.sh
+   ```
+
+2. **Open VVVeb installer**:
+   http://localhost:8080/vvveb-cms/install/
+
+3. **Configure database** (use credentials above)
+
+4. **Complete installation**
+
+5. **Access admin panel**:
+   http://localhost:8080/vvveb-cms/admin/
+
+---
+
 ## Project Structure
 
 ```
-/
-├── public/                    # Web root
-│   ├── cms/                  # VVVeb CMS
-│   ├── vvveb-builder/        # Visual page builder
-│   └── assets/
-│       └── videos/          # Optimized video assets
-│
-├── vvveb-theme-landing/      # PRIMARY CODEBASE
-│   ├── blocks/              # Reusable content blocks
-│   ├── sections/            # Page sections
-│   ├── css/                # Theme styles
-│   ├── scss/               # Sass source files
-│   ├── js/                 # Theme JavaScript
-│   └── content/            # Page templates
-│
-├── docker/                   # Docker configuration
-│   ├── nginx/              # Web server config
-│   ├── php/                # PHP-FPM config
-│   └── mysql/              # Database init
-│
-├── docs/                     # Project documentation
-│   ├── architecture.md      # Technical architecture
-│   ├── brief.md            # Project brief
-│   └── prd.md              # Product requirements
-│
-├── archive/                  # Archived legacy code
-│   ├── static-website/      # Old static PHP site
-│   └── docs/               # Obsolete documentation
-│
-├── docker-compose.yml
-├── start-dev.sh
-├── stop-dev.sh
-├── README.md               # This file
-├── VVVEB-GUIDE.md          # VVVeb development guide
-├── DEVELOPMENT-GUIDE.md    # Technical setup & workflows
-└── CONTENT-STRATEGY.md     # Brand voice & copywriting
+.
+├── copywriting/                    # Brand copywriting content
+├── docker/                         # Docker configuration
+│   ├── nginx/default.conf         # Nginx config (CRITICAL - asset routing)
+│   └── php/                       # PHP-FPM Dockerfile
+├── public/                         # Web root
+│   ├── index.php                  # Entry point (CRITICAL - VVVeb config)
+│   └── vvveb/                     # VVVeb CMS installation
+│       ├── app/                   # Controllers and application logic
+│       ├── config/                # Site and database configuration
+│       ├── env.php                # Environment settings
+│       ├── index.php              # VVVeb bootstrap
+│       ├── public/themes/landing/ # Theme HTML templates
+│       └── storage/               # Cache and compiled templates
+├── docker-compose.yml              # Container orchestration
+├── start-dev.sh                    # Start script
+└── stop-dev.sh                     # Stop script
 ```
 
 ---
 
-## Development
+## Architecture Overview (CRITICAL)
 
-### Primary Codebase
+This project uses **VVVeb CMS for dynamic page rendering**. Every page request goes through PHP and the VVVeb template engine.
 
-**All development happens in** `/vvveb-theme-landing/`
+### Request Flow
 
-This is the active VVVeb theme that powers the website.
-
-### Quick Development Workflow
-
-1. **Edit theme files**
-   ```bash
-   cd vvveb-theme-landing/
-   # Edit sections, styles, or scripts
-   ```
-
-2. **View changes**
-   - Frontend: http://localhost:8080/
-   - Admin: http://localhost:8080/cms/admin/
-
-3. **Commit changes**
-   ```bash
-   git add vvveb-theme-landing/
-   git commit -m "Update: [description]"
-   ```
-
-### Key Directories
-
-- **`/vvveb-theme-landing/sections/`** - Page components (hero, footer, etc.)
-- **`/vvveb-theme-landing/scss/`** - Sass source files
-- **`/vvveb-theme-landing/js/`** - Theme JavaScript
-- **`/vvveb-theme-landing/blocks/`** - Reusable content blocks
-
----
-
-## Documentation
-
-### Essential Guides
-1. **[VVVEB-GUIDE.md](VVVEB-GUIDE.md)** - VVVeb CMS & theme development
-2. **[DEVELOPMENT-GUIDE.md](DEVELOPMENT-GUIDE.md)** - Technical setup & workflows
-3. **[CONTENT-STRATEGY.md](CONTENT-STRATEGY.md)** - Brand voice & copywriting guidelines
-
-### Project Documents
-- **[docs/architecture.md](docs/architecture.md)** - Technical architecture
-- **[docs/brief.md](docs/brief.md)** - Project brief
-- **[docs/prd.md](docs/prd.md)** - Product requirements
-
-### Archived Documentation
-Legacy documentation from the static website phase has been moved to `/archive/docs/` for reference.
-
----
-
-## Technology Stack
-
-### Platform
-- **VVVeb CMS** - Content management & visual builder
-- **PHP 8.1** - Server-side runtime
-- **MySQL 8.0** - Database
-- **Nginx** - Web server
-
-### Frontend
-- **Custom Theme** - Premium TWG design
-- **Sass** - CSS preprocessing
-- **JavaScript** - Theme interactions
-- **Video Assets** - Optimized web video
-
-### DevOps
-- **Docker Compose** - Local development
-- **Git** - Version control
-
----
-
-## Design System
-
-### Typography
-- **Display**: Playfair Display (headlines)
-- **Body**: Crimson Text (content)
-- **UI**: Inter (navigation, forms)
-
-### Color Palette
-```css
---oak-darkest: #2a1810;    /* Deep heartwood */
---oak-dark: #3d2817;        /* Primary dark */
---oak-honey: #b8956a;       /* Accent */
---oak-cream: #e8dcc8;       /* Light text */
---warm-white: #faf7f0;      /* Backgrounds */
+```
+Browser Request
+      ↓
+   nginx
+      ↓
+/public/index.php          ← Sets PUBLIC_PATH, V_SUBDIR_INSTALL
+      ↓
+/public/vvveb/index.php    ← VVVeb bootstrap
+      ↓
+Route Matching             ← Uses /vvveb/app/config/app-routes.php
+      ↓
+Controller                 ← e.g., /vvveb/app/controller/index.php
+      ↓
+Template Engine (vtpl)     ← Processes data-v-* attributes
+      ↓
+Rendered HTML
 ```
 
-### Spacing
-- **Base unit**: 8px
-- **Section padding**: Generous (192-256px)
-- **Content width**: 45-60rem (optimal readability)
+### Why This Structure Must Be Maintained
+
+1. **Entry Point Configuration** - `public/index.php` defines critical constants:
+   - `V_SUBDIR_INSTALL = ''` - Tells VVVeb it's at web root, not `/vvveb`
+   - `PUBLIC_PATH = '/'` - Base path for page URLs
+   - `PUBLIC_THEME_PATH` - Path for theme assets
+
+2. **Nginx Asset Aliases** - `docker/nginx/default.conf` maps asset URLs:
+   - `/themes/` → `/vvveb/public/themes/`
+   - `/media/` → `/vvveb/public/media/`
+   - `/js/` → `/vvveb/public/js/`
+
+   Without these, CSS/JS/images return 404.
+
+3. **VVVeb Subdirectory Detection** - `vvveb/index.php` auto-detects subdirectory from file path. Our override prevents it from incorrectly detecting `/vvveb`.
+
+4. **Template Caching** - VVVeb compiles templates to `/vvveb/storage/compiled-templates/`. After config changes, clear this cache:
+   ```bash
+   docker exec twg_php rm -rf /var/www/html/vvveb/storage/compiled-templates/*
+   ```
+
+### What NOT to Change
+
+| File | Why It's Critical |
+|------|-------------------|
+| `public/index.php` | Defines VVVeb configuration constants |
+| `docker/nginx/default.conf` | Routes static assets correctly |
+| `vvveb/index.php` (line 55) | Modified subdirectory detection |
+| `vvveb/env.php` | V_SUBDIR_INSTALL must be false |
+
+### Editing Theme Templates
+
+Your page templates are in `/public/vvveb/public/themes/landing/`:
+- `index.html` - Homepage
+- `products.html` - Products page
+- `about.html` - About page
+- `manufacturing.html` - Manufacturing page
+- `sustainability.html` - Sustainability page
+- `contact.html` - Contact page
+
+VVVeb processes `data-v-*` attributes in these files to inject dynamic content from the database.
 
 ---
 
-## Target Audience
+## Tech Stack
 
-### Primary
-- **B2B Premium Buyers**: Interior designers, architects, boutique hotels
-- **Discerning Individuals**: People valuing craftsmanship and philosophy
-- **Age**: 35-65, established professionals
-- **Values**: Sustainability, authenticity, heritage, mindful living
-
-### Positioning
-Not selling tables — inspiring people to see new perspectives in life through the philosophy of mindful, intentional living.
+- **CMS**: VVVeb (Open Source)
+- **Web Server**: Nginx 1.29
+- **Backend**: PHP 8.1-FPM
+- **Database**: MySQL 8.0
+- **Admin Tools**: phpMyAdmin
+- **Containerization**: Docker Compose
 
 ---
 
-## Roadmap
+## Development Workflow
 
-### Current Phase: VVVeb Platform Development
-- [x] VVVeb CMS installed and configured
-- [x] Theme structure established
-- [x] Docker environment setup
-- [ ] Theme components development
-- [ ] Content migration
-- [ ] Professional photography
-- [ ] Performance optimization
+### Creating Pages
 
-### Future Enhancements
-- Blog integration
-- Product catalog
-- Client testimonials
-- Portfolio showcase
-- Newsletter signup
+1. Log into VVVeb admin
+2. Use visual page builder
+3. All pages auto-saved to `/public/`
+4. Changes visible immediately at http://localhost:8080
 
----
+### Adding Content
 
-## Browser Support
+- Use VVVeb admin panel for content management
+- Reference copywriting from `/copywriting/` directory
+- Upload images/videos through VVVeb interface
 
-- **Modern browsers**: Full support (Chrome, Firefox, Safari, Edge)
-- **Mobile**: iOS Safari 12+, Chrome Android
-- **IE11**: Basic functionality (graceful degradation)
+### Database Access
+
+- **Web UI**: http://localhost:8081 (phpMyAdmin)
+- **CLI**: `docker exec -it twg_mysql mysql -u vvveb_user -p`
 
 ---
 
-## Contributing
+## Docker Commands
 
-### Code Standards
-- Follow existing code style
-- Test on multiple browsers
-- Optimize for performance
-- Document changes
+### View Running Containers
+```bash
+docker ps
+```
 
-### Design Principles
-- Maintain generous whitespace
-- Use premium typography system
-- Follow brand guidelines (see CONTENT-STRATEGY.md)
+### View Logs
+```bash
+docker logs twg_nginx
+docker logs twg_php
+docker logs twg_mysql
+```
+
+### Restart Container
+```bash
+docker restart twg_nginx
+```
+
+### Access Container Shell
+```bash
+docker exec -it twg_nginx sh
+docker exec -it twg_php bash
+```
+
+### Clean Rebuild
+```bash
+./stop-dev.sh
+docker-compose up -d --build --force-recreate
+```
+
+---
+
+## Troubleshooting
+
+### Port Conflicts
+If ports 8080, 8081, or 3306 are in use:
+1. Stop conflicting services
+2. Or edit `docker-compose.yml` to use different ports
+
+### Permission Issues
+```bash
+chmod +x start-dev.sh stop-dev.sh
+```
+
+### Reset Everything
+```bash
+./stop-dev.sh
+docker-compose down -v  # Removes volumes (deletes database!)
+./start-dev.sh
+```
+
+### VVVeb Not Loading
+1. Check containers are running: `docker ps`
+2. Check nginx logs: `docker logs twg_nginx`
+3. Verify PHP-FPM: `docker logs twg_php`
+
+### CSS/JS Not Loading (404 Errors)
+Assets return 404 if nginx aliases are misconfigured. Check:
+```bash
+curl -I http://localhost:8080/themes/landing/css/style.bundle.css
+```
+Should return `200 OK`. If not, verify `docker/nginx/default.conf` has correct location aliases.
+
+### Pages Show Wrong URLs (e.g., /vvveb/public/)
+1. Clear compiled templates:
+   ```bash
+   docker exec twg_php rm -rf /var/www/html/vvveb/storage/compiled-templates/*
+   docker exec twg_php rm -rf /var/www/html/vvveb/storage/cache/*
+   ```
+2. Clear PHP OPcache:
+   ```bash
+   docker exec twg_php php -r "opcache_reset();"
+   ```
+3. Verify `public/index.php` has correct constants
+
+### Admin Navigation Bar Appearing on Site
+This is caused by VVVeb editor session in browser localStorage:
+1. Open site in incognito/private mode, OR
+2. Clear localStorage in DevTools console:
+   ```javascript
+   localStorage.clear(); sessionStorage.clear(); location.reload();
+   ```
+
+---
+
+## Brand Assets
+
+All copywriting content is preserved in `/copywriting/`:
+- Brand voice guidelines
+- Product descriptions
+- Page content drafts
+- Marketing copy
+
+---
+
+## Next Steps
+
+1. ✅ Complete VVVeb installation
+2. ✅ Configure routing and asset paths
+3. ✅ Build 6 pages (Home, About, Products, Manufacturing, Sustainability, Contact)
+4. ⬜ Upload brand assets (logo, product images)
+5. ⬜ Add video backgrounds
+6. ⬜ Configure contact forms
+7. ⬜ Test responsive design
+8. ⬜ Launch!
 
 ---
 
 ## Support
 
-### Common Issues
-See [VVVEB-GUIDE.md](VVVEB-GUIDE.md) troubleshooting section
-
-### Development Help
-See [DEVELOPMENT-GUIDE.md](DEVELOPMENT-GUIDE.md)
-
-### Content Questions
-See [CONTENT-STRATEGY.md](CONTENT-STRATEGY.md)
+- **VVVeb Docs**: https://www.vvveb.com/documentation
+- **Docker Docs**: https://docs.docker.com/
+- **Project Issues**: Create issue in repository
 
 ---
 
-## Philosophy
+**Status**: ✅ VVVeb CMS operational with custom routing
+**Environment**: Local development
+**Last Updated**: November 17, 2025
 
-> "We don't make tables. We create spaces where families gather, decisions are made, and memories take root."
-
-This project embodies TWG's values:
-- **Intentionality over speed** - Every element earns its place
-- **Timeless over trendy** - Built to endure
-- **Inspiration over transaction** - We inspire, not sell
-- **Connection to nature** - Forest to forever
-
----
-
-**Built with intention**
-🌲 Where Forest Meets Forever 🌲
+🌲 **Where Forest Meets Forever** 🌲

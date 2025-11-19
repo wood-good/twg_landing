@@ -10,30 +10,23 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     libzip-dev \
-    libicu-dev \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-install -j$(nproc) \
-        pdo_mysql \
-        mysqli \
-        mbstring \
-        exif \
-        pcntl \
-        bcmath \
-        gd \
-        zip \
-        intl \
-        opcache
+    libfreetype6-dev \
+    libjpeg62-turbo-dev
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Install PHP extensions
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    zip \
+    gettext
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Set proper permissions
+# Set permissions
 RUN chown -R www-data:www-data /var/www/html
-
-# Expose port 9000 for PHP-FPM
-EXPOSE 9000
-
-CMD ["php-fpm"]

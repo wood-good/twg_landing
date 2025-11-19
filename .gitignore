@@ -69,5 +69,7 @@ temp/
 .LSOverride
 Icon
 
-# Archive directory (local only - not committed)
-/archive/
+# VVVeb uploads and cache
+public/media/
+public/storage/
+public/cache/

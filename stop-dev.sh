@@ -1,22 +1,11 @@
 #!/bin/bash
-################################################################################
-# TWG Landing - Stop Local Development Environment
-################################################################################
 
-set -e
-
-# Colors
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m'
-
-echo -e "${YELLOW}Stopping TWG Landing Development Environment...${NC}"
+echo -e "\033[1;33mStopping TWG Landing Development Environment...\033[0m"
 echo ""
 
-# Stop containers
 docker-compose down
 
 echo ""
-echo -e "${GREEN}✅ Development environment stopped.${NC}"
+echo -e "\033[0;32m✅ Development environment stopped.\033[0m"
 echo ""
 echo "To start again, run: ./start-dev.sh"
