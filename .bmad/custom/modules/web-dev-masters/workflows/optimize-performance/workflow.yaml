@@ -1,0 +1,9 @@
+# Optimize Performance Workflow
+name: optimize-performance
+description: "Frontend and backend performance optimization with Core Web Vitals"
+author: "Lieutenant Nova & Captain Iron"
+config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
+installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/optimize-performance"
+template: false
+instructions: "{installed_path}/instructions.md"
+standalone: true

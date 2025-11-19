@@ -1,0 +1,9 @@
+# Backend Service Setup Workflow
+name: backend-service-setup
+description: "Complete backend service with auth, validation, and documentation"
+author: "Captain Iron"
+config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
+installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/backend-service-setup"
+template: false
+instructions: "{installed_path}/instructions.md"
+standalone: true

@@ -1,0 +1,10 @@
+# Build Database Schema Workflow
+name: build-database-schema
+description: "Design normalized database schema with migrations and optimization"
+author: "Major Atlas"
+config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
+installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/build-database-schema"
+template: "{installed_path}/template.md"
+instructions: "{installed_path}/instructions.md"
+default_output_file: "{output_folder}/schema-design-{{date}}.md"
+standalone: true

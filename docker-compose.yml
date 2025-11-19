@@ -1,0 +1,70 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: twg_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - twg_network
+    restart: unless-stopped
+
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: twg_php
+    volumes:
+      - ./public:/var/www/html
+    networks:
+      - twg_network
+    restart: unless-stopped
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=vvveb_db
+      - DB_USER=vvveb_user
+      - DB_PASSWORD=vvveb_pass
+
+  mysql:
+    image: mysql:8.0
+    container_name: twg_mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: vvveb_db
+      MYSQL_USER: vvveb_user
+      MYSQL_PASSWORD: vvveb_pass
+    networks:
+      - twg_network
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: twg_phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root_password
+    depends_on:
+      - mysql
+    networks:
+      - twg_network
+    restart: unless-stopped
+
+networks:
+  twg_network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local
