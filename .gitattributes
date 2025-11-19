@@ -1,0 +1,24 @@
+# VVVeb Dual-Site Repository - Merge Strategies
+# These rules prevent content files from being merged across site branches
+
+# Database files - NEVER merge across sites
+*.sql merge=ours
+*.db merge=ours
+database/** merge=ours
+
+# Storage and uploads - site-specific content
+storage/** merge=ours
+media/** merge=ours
+uploads/** merge=ours
+public/media/** merge=ours
+public/uploads/** merge=ours
+vvveb/storage/** merge=ours
+
+# Site-specific configuration
+config/site.php merge=ours
+.env merge=ours
+.env.local merge=ours
+.env.production merge=ours
+
+# Ensure LF line endings for scripts
+*.sh text eol=lf
