@@ -63,7 +63,12 @@ Root Password: root_password
 
 ```
 .
-├── copywriting/                    # Brand copywriting content
+├── docs/                           # All project documentation
+│   ├── architecture/              # Architecture and design docs
+│   ├── cms/                       # VVVeb CMS documentation
+│   ├── content/                   # Brand copywriting content
+│   ├── guides/                    # Operational guides
+│   └── setup/                     # Setup and installation docs
 ├── docker/                         # Docker configuration
 │   ├── nginx/default.conf         # Nginx config (CRITICAL - asset routing)
 │   └── php/                       # PHP-FPM Dockerfile
@@ -174,7 +179,7 @@ VVVeb processes `data-v-*` attributes in these files to inject dynamic content f
 ### Adding Content
 
 - Use VVVeb admin panel for content management
-- Reference copywriting from `/copywriting/` directory
+- Reference copywriting from `/docs/content/` directory
 - Upload images/videos through VVVeb interface
 
 ### Database Access
@@ -272,7 +277,7 @@ This is caused by VVVeb editor session in browser localStorage:
 
 ## Brand Assets
 
-All copywriting content is preserved in `/copywriting/`:
+All copywriting content is preserved in `/docs/content/`:
 - Brand voice guidelines
 - Product descriptions
 - Page content drafts

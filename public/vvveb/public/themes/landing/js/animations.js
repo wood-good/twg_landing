@@ -356,14 +356,28 @@ function initNavbarAnimations() {
   const navbar = document.querySelector('.navbar-moooi');
   if (!navbar) return;
 
+  // Check if page has a hero section (full-height dark background)
+  const hasHero = document.querySelector('.hero-cover');
+
+  // If no hero, start with scrolled state (dark text on light background)
+  // This prevents invisible white text on white background
+  if (!hasHero) {
+    navbar.classList.add('scrolled');
+    // Add body padding to account for fixed navbar
+    document.body.style.paddingTop = '80px';
+  }
+
   // Smooth background transition on scroll
   ScrollTrigger.create({
     start: 'top -50',
     onUpdate: (self) => {
-      if (self.direction === 1 && window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else if (window.scrollY <= 50) {
-        navbar.classList.remove('scrolled');
+      // Only toggle scrolled class if page has a hero
+      if (hasHero) {
+        if (self.direction === 1 && window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else if (window.scrollY <= 50) {
+          navbar.classList.remove('scrolled');
+        }
       }
     }
   });
