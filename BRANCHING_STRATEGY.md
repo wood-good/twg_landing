@@ -2,7 +2,11 @@
 
 ## Overview
 
-This repository contains two separate client websites built on the same VVVeb tech stack. The branching strategy is designed to:
+This repository contains two separate client websites built on the same VVVeb tech stack:
+- **The Wood and Good SIA** (TWG)
+- **Timber International ltd** (Timber)
+
+The branching strategy is designed to:
 - Share system-wide code improvements across both sites
 - Maintain complete content independence between sites
 - Prevent accidental content overwrites during merges
@@ -11,13 +15,13 @@ This repository contains two separate client websites built on the same VVVeb te
 ## Branch Structure
 
 ```
-main
-├── branch-a (Site A Production)
-│   ├── branch-a-staging (Site A Testing)
-│   └── branch-a-dev (Site A Development)
-└── branch-b (Site B Production)
-    ├── branch-b-staging (Site B Testing)
-    └── branch-b-dev (Site B Development)
+main (VVVeb Platform Core - NO CONTENT)
+├── twg (The Wood and Good - Production)
+│   ├── twg-staging (TWG Testing)
+│   └── twg-dev (TWG Development)
+└── timber (Timber International - Production)
+    ├── timber-staging (Timber Testing)
+    └── timber-dev (Timber Development)
 ```
 
 ## Branch Definitions
@@ -39,13 +43,13 @@ main
 - Site-specific environment configs
 
 **Merge Rules:**
-- ✅ Can merge TO `branch-a` and `branch-b` (code only)
+- ✅ Can merge TO `twg` and `timber` (code only)
 - ❌ Never merges FROM site branches
 - ❌ Never contains database or content files
 
 ---
 
-### `branch-a` / `branch-b`
+### `twg` / `timber`
 **Purpose:** Production-ready state for each respective site
 
 **Contains:**
@@ -58,12 +62,12 @@ main
 **Merge Rules:**
 - ✅ Receives code updates FROM `main` (content files excluded)
 - ✅ Receives features/fixes FROM own staging branch
-- ❌ NEVER merge between `branch-a` and `branch-b`
+- ❌ NEVER merge between `twg` and `timber`
 - ❌ NEVER merge content files FROM `main`
 
 ---
 
-### `branch-a-staging` / `branch-b-staging`
+### `twg-staging` / `timber-staging`
 **Purpose:** Testing environment before production deployment
 
 **Merge Rules:**
@@ -73,7 +77,7 @@ main
 
 ---
 
-### `branch-a-dev` / `branch-b-dev`
+### `twg-dev` / `timber-dev`
 **Purpose:** Active development work for each site
 
 **Merge Rules:**
@@ -99,6 +103,7 @@ vvveb/storage/
 config/site.php
 .env
 .env.local
+.env.production
 ```
 
 These paths are protected via `.gitattributes` merge strategies.
@@ -108,8 +113,8 @@ These paths are protected via `.gitattributes` merge strategies.
 ### ✅ System Updates (Code Only)
 
 ```
-main → branch-a (excluding content files)
-main → branch-b (excluding content files)
+main → twg (excluding content files)
+main → timber (excluding content files)
 ```
 
 **When:** Bug fixes, plugin updates, theme improvements, security patches
@@ -121,8 +126,8 @@ main → branch-b (excluding content files)
 ### ✅ Feature Development
 
 ```
-branch-a-dev → branch-a-staging → branch-a
-branch-b-dev → branch-b-staging → branch-b
+twg-dev → twg-staging → twg
+timber-dev → timber-staging → timber
 ```
 
 **When:** New features, content updates, design changes
@@ -134,9 +139,9 @@ branch-b-dev → branch-b-staging → branch-b
 ### ❌ FORBIDDEN Merges
 
 ```
-branch-a ↔ branch-b  (NEVER)
-branch-a-dev → branch-b  (NEVER)
-branch-b-staging → branch-a  (NEVER)
+twg ↔ timber  (NEVER)
+twg-dev → timber  (NEVER)
+timber-staging → twg  (NEVER)
 ```
 
 **Why:** Will overwrite site-specific content and database, destroying one site's data
@@ -153,39 +158,37 @@ git add plugins/custom-plugin.php
 git commit -m "Fix: Correct product display logic"
 git push origin main
 
-# Apply to Site A
-git checkout branch-a
-./scripts/merge-from-main.sh branch-a
-git push origin branch-a
+# Apply to The Wood and Good
+./scripts/merge-from-main.sh twg
+git push origin twg
 
-# Apply to Site B
-git checkout branch-b
-./scripts/merge-from-main.sh branch-b
-git push origin branch-b
+# Apply to Timber International
+./scripts/merge-from-main.sh timber
+git push origin timber
 ```
 
 ---
 
-### Example 2: Adding New Content to Site A
+### Example 2: Adding New Content to TWG
 
 ```bash
 # Work in development branch
-git checkout branch-a-dev
+git checkout twg-dev
 # Make content changes via VVVeb CMS or direct edits
 git add -A
 git commit -m "Add new product categories"
-git push origin branch-a-dev
+git push origin twg-dev
 
 # Test in staging
-git checkout branch-a-staging
-git merge branch-a-dev
-git push origin branch-a-staging
+git checkout twg-staging
+git merge twg-dev
+git push origin twg-staging
 # Perform testing
 
 # Deploy to production
-git checkout branch-a
-git merge branch-a-staging
-git push origin branch-a
+git checkout twg
+git merge twg-staging
+git push origin twg
 ```
 
 ---
@@ -201,8 +204,8 @@ git commit -m "Update VVVeb to v2.x.x"
 git push origin main
 
 # Propagate to both sites using merge script
-./scripts/merge-from-main.sh branch-a
-./scripts/merge-from-main.sh branch-b
+./scripts/merge-from-main.sh twg
+./scripts/merge-from-main.sh timber
 ```
 
 ## Scripts
@@ -213,8 +216,8 @@ git push origin main
 
 **Usage:**
 ```bash
-./scripts/merge-from-main.sh branch-a
-./scripts/merge-from-main.sh branch-b
+./scripts/merge-from-main.sh twg
+./scripts/merge-from-main.sh timber
 ```
 
 **What it does:**
@@ -231,178 +234,9 @@ git push origin main
 **Purpose:** Prevent accidental cross-site merges
 
 **Automatically blocks:**
-- `branch-a` → `branch-b` merges
-- `branch-b` → `branch-a` merges
+- `twg*` → `timber*` merges
+- `timber*` → `twg*` merges
 - Any dev branch merging to opposite site
-
-## Setup Instructions
-
-### Initial Repository Setup
-
-```bash
-# 1. Initialize with main branch
-git checkout -b main
-# Set up base VVVeb installation
-git add -A
-git commit -m "Initial VVVeb setup"
-git push origin main
-
-# 2. Create Site A branches
-git checkout -b branch-a
-# Configure Site A specific settings
-git add -A
-git commit -m "Initialize Site A"
-git push origin branch-a
-
-git checkout -b branch-a-staging
-git push origin branch-a-staging
-
-git checkout -b branch-a-dev
-git push origin branch-a-dev
-
-# 3. Create Site B branches
-git checkout main
-git checkout -b branch-b
-# Configure Site B specific settings
-git add -A
-git commit -m "Initialize Site B"
-git push origin branch-b
-
-git checkout -b branch-b-staging
-git push origin branch-b-staging
-
-git checkout -b branch-b-dev
-git push origin branch-b-dev
-
-# 4. Set up .gitattributes
-git checkout main
-# Create .gitattributes file (see Configuration Files section)
-git add .gitattributes
-git commit -m "Add merge strategy for content files"
-git push origin main
-
-# 5. Install git hooks
-# Copy pre-merge-commit hook to .git/hooks/
-chmod +x .git/hooks/pre-merge-commit
-```
-
-## Configuration Files
-
-### `.gitattributes`
-
-Place in repository root:
-
-```
-# VVVeb Content/Database - Never merge across site branches
-*.sql merge=ours
-*.db merge=ours
-database/** merge=ours
-storage/** merge=ours
-media/** merge=ours
-uploads/** merge=ours
-public/media/** merge=ours
-public/uploads/** merge=ours
-vvveb/storage/** merge=ours
-
-# Site-specific configuration
-config/site.php merge=ours
-.env merge=ours
-.env.local merge=ours
-```
-
-### `.git/hooks/pre-merge-commit`
-
-```bash
-#!/bin/bash
-
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-MERGE_BRANCH=$(git rev-parse --abbrev-ref MERGE_HEAD 2>/dev/null)
-
-# Exit if not in a merge
-if [ -z "$MERGE_BRANCH" ]; then
-    exit 0
-fi
-
-# Prevent branch-a → branch-b merges
-if [[ "$CURRENT_BRANCH" == "branch-a"* ]] && [[ "$MERGE_BRANCH" == "branch-b"* ]]; then
-    echo "❌ ERROR: Cannot merge branch-b into branch-a"
-    echo "This would overwrite Site A's content with Site B's content."
-    echo "Aborting merge."
-    exit 1
-fi
-
-# Prevent branch-b → branch-a merges
-if [[ "$CURRENT_BRANCH" == "branch-b"* ]] && [[ "$MERGE_BRANCH" == "branch-a"* ]]; then
-    echo "❌ ERROR: Cannot merge branch-a into branch-b"
-    echo "This would overwrite Site B's content with Site A's content."
-    echo "Aborting merge."
-    exit 1
-fi
-
-echo "✅ Merge safety check passed"
-exit 0
-```
-
-### `scripts/merge-from-main.sh`
-
-```bash
-#!/bin/bash
-
-# Safety check for arguments
-if [ -z "$1" ]; then
-    echo "Usage: ./scripts/merge-from-main.sh <branch-name>"
-    echo "Example: ./scripts/merge-from-main.sh branch-a"
-    exit 1
-fi
-
-SITE_BRANCH=$1
-
-# Verify target branch exists
-if ! git show-ref --verify --quiet refs/heads/$SITE_BRANCH; then
-    echo "❌ Error: Branch '$SITE_BRANCH' does not exist"
-    exit 1
-fi
-
-# Verify we're merging from main
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [ "$CURRENT_BRANCH" != "main" ]; then
-    git checkout main
-    if [ $? -ne 0 ]; then
-        echo "❌ Error: Could not checkout main branch"
-        exit 1
-    fi
-fi
-
-# Checkout target branch
-echo "📌 Checking out $SITE_BRANCH..."
-git checkout $SITE_BRANCH
-
-# Start merge without committing
-echo "🔀 Merging code from main (content excluded)..."
-git merge main --no-commit --no-ff
-
-if [ $? -ne 0 ]; then
-    echo "❌ Merge conflicts detected. Please resolve manually."
-    exit 1
-fi
-
-# Reset content-specific files to preserve site content
-echo "🛡️  Protecting site-specific content..."
-git reset HEAD database/ storage/ media/ uploads/ config/site.php .env .env.local 2>/dev/null
-git checkout -- database/ storage/ media/ uploads/ config/site.php .env .env.local 2>/dev/null
-
-# Commit the code changes
-echo "💾 Committing system updates..."
-git commit -m "Merge system updates from main (content preserved)"
-
-echo "✅ Successfully merged main → $SITE_BRANCH"
-echo "📤 Don't forget to push: git push origin $SITE_BRANCH"
-```
-
-Make executable:
-```bash
-chmod +x scripts/merge-from-main.sh
-```
 
 ## Troubleshooting
 
@@ -442,15 +276,15 @@ git commit
 git checkout main
 # Apply fix
 git commit -m "Hotfix: Critical issue"
-./scripts/merge-from-main.sh branch-a
-./scripts/merge-from-main.sh branch-b
+./scripts/merge-from-main.sh twg
+./scripts/merge-from-main.sh timber
 
 # Option 2: Direct to each site (if main unavailable)
-git checkout branch-a
+git checkout twg
 # Apply fix
 git commit -m "Hotfix: Critical issue"
 
-git checkout branch-b
+git checkout timber
 # Apply same fix
 git commit -m "Hotfix: Critical issue"
 ```
@@ -470,15 +304,16 @@ When handing off this project to client or another developer:
 
 ## Emergency Contacts
 
-**Original Developer:** [Your contact info]  
-**Repository Owner:** [Client/Company contact]  
+**Original Developer:** [Your contact info]
+**Repository Owner:** [Client/Company contact]
 **Hosting/Deployment:** [Relevant credentials location]
 
 ## Version History
 
 - v1.0 - Initial branching strategy documentation
-- Created: [Date]
-- Last Updated: [Date]
+- v1.1 - Updated with actual company branch names (TWG, Timber)
+- Created: 2025-11-19
+- Last Updated: 2025-11-19
 
 ---
 
@@ -486,15 +321,15 @@ When handing off this project to client or another developer:
 
 ### ✅ SAFE MERGES
 ```
-main → branch-a (code only)
-main → branch-b (code only)
-branch-a-dev → branch-a-staging → branch-a
-branch-b-dev → branch-b-staging → branch-b
+main → twg (code only)
+main → timber (code only)
+twg-dev → twg-staging → twg
+timber-dev → timber-staging → timber
 ```
 
 ### ❌ NEVER MERGE
 ```
-branch-a ↔ branch-b
+twg ↔ timber
 Any cross-site branch merges
 ```
 
@@ -506,15 +341,18 @@ database/, storage/, media/, uploads/
 
 ### 🛠️ KEY COMMANDS
 ```bash
-# Merge system updates
-./scripts/merge-from-main.sh branch-a
+# Merge system updates to TWG
+./scripts/merge-from-main.sh twg
 
-# Feature development flow
-git checkout branch-a-dev
+# Merge system updates to Timber
+./scripts/merge-from-main.sh timber
+
+# Feature development flow (TWG example)
+git checkout twg-dev
 git commit -m "Feature"
-git checkout branch-a-staging
-git merge branch-a-dev
+git checkout twg-staging
+git merge twg-dev
 # Test, then:
-git checkout branch-a
-git merge branch-a-staging
+git checkout twg
+git merge twg-staging
 ```
