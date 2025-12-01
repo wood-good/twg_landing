@@ -1,139 +1,182 @@
 # Quick Start Guide - The Wood and Good
 
-## 🚀 View Your Website NOW
+## View Your Website
 
-Open your browser and go to:
-```
-http://localhost:8080
-```
+### 1. Start the development server
 
-You should see **The Wood and Good** homepage with Moooi design!
-
----
-
-## 📄 Available Pages
-
-Click these links or type in browser:
-
-- **Homepage**: http://localhost:8080
-- **About**: http://localhost:8080/about
-- **Products**: http://localhost:8080/products
-- **Manufacturing**: http://localhost:8080/manufacturing
-- **Sustainability**: http://localhost:8080/sustainability
-
----
-
-## ✏️ Edit Content (Super Easy!)
-
-### Step 1: Open the file you want to edit
 ```bash
-# Homepage
-open -a "TextEdit" /Users/ernestssmalikis/Projects/twg_landing/public/vvveb/public/themes/landing/index.html
-
-# Or use your favorite code editor (VS Code, Sublime, etc.)
+cd twg-payload
+npm install
+npm run dev
 ```
 
-### Step 2: Change the text
-Find the text you want to change and edit it directly in the HTML.
+### 2. Open your browser
 
-### Step 3: Save and refresh browser
-- Save the file (Cmd + S)
-- Refresh browser (Cmd + R)
-- See your changes instantly!
+- **Website**: http://localhost:3000
+- **CMS Admin**: http://localhost:3000/admin
 
 ---
 
-## 🎨 Change Colors/Fonts
+## Available Pages
 
-Edit this file:
-```
-/Users/ernestssmalikis/Projects/twg_landing/public/vvveb/public/themes/landing/css/custom.css
-```
-
-**Colors** are defined at the top (lines 7-23):
-```css
---twg-gold: #d4af37;    /* Change this color */
---twg-black: #000000;   /* Or this one */
-```
-
-**Fonts** are at lines 36-85.
+| Page | URL |
+|------|-----|
+| Home | http://localhost:3000 |
+| About | http://localhost:3000/about |
+| Products | http://localhost:3000/products |
+| Manufacturing | http://localhost:3000/manufacturing |
+| Sustainability | http://localhost:3000/sustainability |
+| Contact | http://localhost:3000/contact |
 
 ---
 
-## 🖼️ Add Images
+## Edit Content
 
-### Where to put images:
-```
-/Users/ernestssmalikis/Projects/twg_landing/public/vvveb/public/themes/landing/media/images/
-```
+### Visual Editing (Recommended)
 
-### How to use in HTML:
-```html
-<!-- Replace placeholder with: -->
-<img src="media/images/workshop.jpg" alt="Our Workshop">
+1. Go to http://localhost:3000/admin
+2. Click on a page in the sidebar
+3. Click directly on content to edit
+4. Use the sidebar to add/remove/reorder blocks
+5. Changes save automatically
+
+### Code Editing
+
+Edit MDX files in `twg-payload/content/pages/`:
+
+```yaml
+# content/pages/home.mdx
+---
+title: Home
+blocks:
+  - _template: hero
+    heading: Where Forest Meets Forever
+    subheading: Premium oak furniture
+    theme: dark
+  - _template: featuresGrid
+    heading: Our Craft
+    columns: '3'
+    items:
+      - title: Quality
+        description: Every piece tells a story
+---
 ```
 
 ---
 
-## 🔧 Stop/Start Website
+## Content Blocks
 
-### Stop
+Add these blocks to any page:
+
+| Block | Use For |
+|-------|---------|
+| `hero` | Full-screen hero sections |
+| `featuresGrid` | Grid of feature cards |
+| `editorialText` | Rich text content |
+| `imageSection` | Full-width images/videos |
+| `cta` | Call-to-action banners |
+| `stats` | Statistics display |
+| `testimonial` | Customer quotes |
+
+---
+
+## Add Images
+
+1. Place images in `twg-payload/public/uploads/`
+2. Reference in content:
+   ```yaml
+   - _template: hero
+     backgroundImage: /uploads/hero-bg.jpg
+   ```
+
+Or upload through TinaCMS admin interface.
+
+---
+
+## Design System
+
+### Colors
+
+| Name | Hex | Usage |
+|------|-----|-------|
+| Cream | `#F5F5F0` | Backgrounds |
+| Charcoal | `#2B2B2B` | Text |
+| Gold | `#C9A961` | Accents |
+
+### Typography
+
+- Headings: DM Sans
+- Body: Inter
+
+---
+
+## Stop/Start
+
 ```bash
-cd /Users/ernestssmalikis/Projects/twg_landing
-./stop-dev.sh
+# Start
+cd twg-payload
+npm run dev
+
+# Stop
+Ctrl+C in terminal
 ```
 
-### Start
-```bash
-cd /Users/ernestssmalikis/Projects/twg_landing
-./start-dev.sh
+---
+
+## Common Tasks
+
+### Change the homepage hero
+
+Edit `twg-payload/content/pages/home.mdx`:
+
+```yaml
+blocks:
+  - _template: hero
+    heading: Your New Headline
+    subheading: Your new description
 ```
 
-Then go to: http://localhost:8080
+### Add a new feature card
 
----
-
-## ❓ Common Questions
-
-**Q: How do I change the homepage hero text?**
-A: Edit `index.html`, find the `<h1>` tag around line 72, change the text.
-
-**Q: How do I add my logo?**
-A: Replace "The Wood and Good" text in navigation with:
-```html
-<a class="navbar-brand" href="/">
-  <img src="media/images/logo.png" alt="The Wood and Good" style="height: 40px;">
-</a>
+```yaml
+- _template: featuresGrid
+  items:
+    - title: New Feature
+      description: Feature description
 ```
 
-**Q: How do I change footer links?**
-A: Edit the footer section at the bottom of each HTML file.
+### Change colors
 
-**Q: Can I use the VVVeb visual editor?**
-A: Yes! Go to http://localhost:8080/admin and login.
+Edit `twg-payload/tailwind.config.ts`:
 
----
-
-## 📚 Full Documentation
-
-For detailed guides, see:
-- [WEBSITE-READY.md](WEBSITE-READY.md) - Complete setup summary
-- [MOOOI-STYLE-GUIDE.md](MOOOI-STYLE-GUIDE.md) - Design system reference
-- [VVVEB-CODE-EDITING-GUIDE.md](VVVEB-CODE-EDITING-GUIDE.md) - Editing guide
-
----
-
-## ✅ What You Have
-
-- ✅ 5 pages with professional design
-- ✅ Moooi-inspired aesthetic
-- ✅ Your copywriting content
-- ✅ Mobile responsive
-- ✅ Smooth animations
-- ✅ Ready to add images/videos
+```typescript
+colors: {
+  moooi: {
+    cream: '#F5F5F0',
+    gold: '#C9A961',
+    // Change these values
+  }
+}
+```
 
 ---
 
-🌲 **Enjoy your new website!** 🌲
+## What You Have
 
-**First step**: Open http://localhost:8080 right now!
+- 6 pages with Moooi-inspired design
+- Visual content editing via TinaCMS
+- Block-based page composition
+- Mobile responsive design
+- Smooth animations
+- Git-versioned content
+
+---
+
+## Full Documentation
+
+- [Detailed README](../../twg-payload/README.md) - Complete setup guide
+- [TinaCMS Docs](https://tina.io/docs/) - TinaCMS documentation
+
+---
+
+**First step**: Run `npm run dev` and visit http://localhost:3000
