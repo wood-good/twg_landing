@@ -203,7 +203,7 @@ const imageSectionBlock: Template = {
       type: "image",
       name: "image",
       label: "Background Image",
-      required: true,
+      description: "Required unless using a video background",
     },
     {
       type: "string",
