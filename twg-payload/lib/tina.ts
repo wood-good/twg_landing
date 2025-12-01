@@ -1,7 +1,22 @@
 import client from '@/tina/__generated__/client'
-import type { Page, PageQuery } from '@/tina/__generated__/types'
+import type { Page, PageQuery, PageQueryVariables } from '@/tina/__generated__/types'
 
 export type PageContent = Page
+
+export interface TinaPageProps {
+  query: string
+  variables: PageQueryVariables
+  data: PageQuery
+}
+
+export async function getPageProps(slug: string): Promise<TinaPageProps> {
+  const result = await client.queries.page({ relativePath: `${slug}.mdx` })
+  return {
+    query: result.query,
+    variables: result.variables,
+    data: result.data,
+  }
+}
 
 export async function getPageContent(slug: string): Promise<PageContent> {
   try {
@@ -9,7 +24,6 @@ export async function getPageContent(slug: string): Promise<PageContent> {
     return result.data.page as PageContent
   } catch (error) {
     console.error(`Error fetching content for ${slug}:`, error)
-    // Return minimal default content if fetch fails
     return {
       title: slug.charAt(0).toUpperCase() + slug.slice(1),
       _sys: {

@@ -1,14 +1,20 @@
 'use client'
 
+import { useTina } from 'tinacms/dist/react'
 import Hero from '@/components/Hero'
 import { BlockRenderer } from '@/components/blocks'
-import type { PageContent } from '@/lib/tina'
+import type { TinaPageProps } from '@/lib/tina'
 
-interface HomePageClientProps {
-  content: PageContent
-}
+export default function HomePageClient(props: TinaPageProps) {
+  // useTina hook enables visual editing in the CMS
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  })
 
-export default function HomePageClient({ content }: HomePageClientProps) {
+  const content = data.page
+
   // If blocks exist, render them using BlockRenderer
   if (content.blocks && content.blocks.length > 0) {
     return <BlockRenderer blocks={content.blocks} />
