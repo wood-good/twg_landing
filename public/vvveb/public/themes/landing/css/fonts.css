@@ -1,0 +1,17 @@
+/* TWG Landing - Font Definitions
+ * This file is referenced by the theme but was missing.
+ * Add custom font imports here if needed.
+ */
+
+/* Google Fonts are typically loaded via CDN in the HTML head */
+/* This file serves as a placeholder for any local font definitions */
+
+/* Example local font definition:
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../fonts/customfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+*/

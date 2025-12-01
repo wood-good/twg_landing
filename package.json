@@ -1,0 +1,27 @@
+{
+  "name": "twg-landing-tests",
+  "version": "1.0.0",
+  "description": "TWG Landing E2E test suite",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project=mobile-chrome --project=mobile-safari",
+    "test:client": "playwright test tests/e2e/client-side.spec.ts",
+    "test:admin": "playwright test tests/e2e/admin.spec.ts",
+    "test:cms": "playwright test tests/e2e/cms.spec.ts",
+    "test:report": "playwright show-report tests/results/html-report",
+    "install:playwright": "npx playwright install --with-deps"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+import { getPageProps } from '@/lib/tina'
+import PageClient from '@/components/PageClient'
+
+export default async function AboutPage() {
+  const props = await getPageProps('about')
+
+  return (
+    <PageClient
+      {...props}
+      fallbackHero={{
+        heading: 'About Us',
+        subheading: 'Our story of passion, innovation, and commitment to excellence',
+        size: 'small',
+      }}
+    />
+  )
+}
