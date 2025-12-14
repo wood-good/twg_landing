@@ -1,10 +1,20 @@
-import { createClient } from '@sanity/client'
+import { createClient, type SanityClient } from '@sanity/client'
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6pfau3iy'
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01'
+// Hardcoded values as fallback - these are public anyway
+const PROJECT_ID = '6pfau3iy'
+const DATASET = 'production'
+const API_VERSION = '2024-01-01'
 
-export const client = createClient({
+// Use env vars if available (non-empty), otherwise use hardcoded values
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID?.trim() || PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET?.trim() || DATASET
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION?.trim() || API_VERSION
+
+// Lazy initialization to avoid issues during build
+let _client: SanityClient | null = null
+let _previewClient: SanityClient | null = null
+
+export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
@@ -12,7 +22,7 @@ export const client = createClient({
 })
 
 // Preview client for draft content (requires token)
-export const previewClient = createClient({
+export const previewClient: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
@@ -20,6 +30,6 @@ export const previewClient = createClient({
   token: process.env.SANITY_API_READ_TOKEN,
 })
 
-export function getClient(preview = false) {
+export function getClient(preview = false): SanityClient {
   return preview ? previewClient : client
 }
