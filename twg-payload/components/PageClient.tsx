@@ -1,6 +1,5 @@
 'use client'
 
-import { useTina } from 'tinacms/dist/react'
 import Hero from '@/components/Hero'
 import { BlockRenderer } from '@/components/blocks'
 import type { TinaPageProps } from '@/lib/tina'
@@ -14,13 +13,8 @@ interface PageClientProps extends TinaPageProps {
 }
 
 export default function PageClient({ fallbackHero, ...props }: PageClientProps) {
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  })
-
-  const content = data.page
+  // When using Sanity, data is already fetched and ready
+  const content = props.data.page
 
   // If blocks exist, render them using BlockRenderer
   if (content.blocks && content.blocks.length > 0) {

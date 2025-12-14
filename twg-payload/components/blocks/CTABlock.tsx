@@ -1,11 +1,18 @@
 'use client'
 
-import type { PageBlocksCta } from '@/tina/__generated__/types'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 interface CTABlockProps {
-  data: PageBlocksCta
+  data: {
+    heading?: string
+    subheading?: string
+    text?: string
+    buttonText?: string
+    buttonLink?: string
+    theme?: string
+    variant?: string
+  }
 }
 
 export default function CTABlock({ data }: CTABlockProps) {

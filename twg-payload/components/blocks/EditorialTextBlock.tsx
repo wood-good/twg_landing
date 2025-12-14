@@ -1,11 +1,34 @@
 'use client'
 
-import type { PageBlocksEditorialText } from '@/tina/__generated__/types'
 import { motion } from 'framer-motion'
-import { TinaMarkdown } from 'tinacms/dist/rich-text'
+import { PortableText } from '@portabletext/react'
 
+// Generic props type that works with both TinaCMS and Sanity
 interface EditorialTextBlockProps {
-  data: PageBlocksEditorialText
+  data: {
+    heading?: string
+    layout?: string
+    backgroundColor?: string
+    contentLeft?: any
+    contentRight?: any
+  }
+}
+
+// Helper to render rich text (supports both Sanity Portable Text and plain strings)
+function RichTextContent({ content }: { content: any }) {
+  if (!content) return null
+
+  // If it's an array (Sanity Portable Text)
+  if (Array.isArray(content)) {
+    return <PortableText value={content} />
+  }
+
+  // If it's a string
+  if (typeof content === 'string') {
+    return <p>{content}</p>
+  }
+
+  return null
 }
 
 export default function EditorialTextBlock({ data }: EditorialTextBlockProps) {
@@ -39,13 +62,13 @@ export default function EditorialTextBlock({ data }: EditorialTextBlockProps) {
           >
             {data.contentLeft && (
               <div className="prose prose-lg max-w-none">
-                <TinaMarkdown content={data.contentLeft} />
+                <RichTextContent content={data.contentLeft} />
               </div>
             )}
 
             {isTwoColumn && data.contentRight && (
               <div className="prose prose-lg max-w-none">
-                <TinaMarkdown content={data.contentRight} />
+                <RichTextContent content={data.contentRight} />
               </div>
             )}
           </div>

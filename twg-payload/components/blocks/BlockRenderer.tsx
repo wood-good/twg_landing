@@ -1,6 +1,5 @@
 'use client'
 
-import type { Page } from '@/tina/__generated__/types'
 import HeroBlock from './HeroBlock'
 import FeaturesGridBlock from './FeaturesGridBlock'
 import EditorialTextBlock from './EditorialTextBlock'
@@ -9,7 +8,11 @@ import CTABlock from './CTABlock'
 import StatsBlock from './StatsBlock'
 import TestimonialBlock from './TestimonialBlock'
 
-type PageBlock = NonNullable<Page['blocks']>[number]
+// Generic block type that works with both TinaCMS and Sanity data
+interface PageBlock {
+  __typename: string
+  [key: string]: any
+}
 
 interface BlockRendererProps {
   blocks: PageBlock[] | null | undefined
@@ -29,19 +32,19 @@ export default function BlockRenderer({ blocks }: BlockRendererProps) {
 
         switch (block.__typename) {
           case 'PageBlocksHero':
-            return <HeroBlock key={key} data={block} />
+            return <HeroBlock key={key} data={block as any} />
           case 'PageBlocksFeaturesGrid':
-            return <FeaturesGridBlock key={key} data={block} />
+            return <FeaturesGridBlock key={key} data={block as any} />
           case 'PageBlocksEditorialText':
-            return <EditorialTextBlock key={key} data={block} />
+            return <EditorialTextBlock key={key} data={block as any} />
           case 'PageBlocksImageSection':
-            return <ImageSectionBlock key={key} data={block} />
+            return <ImageSectionBlock key={key} data={block as any} />
           case 'PageBlocksCta':
-            return <CTABlock key={key} data={block} />
+            return <CTABlock key={key} data={block as any} />
           case 'PageBlocksStats':
-            return <StatsBlock key={key} data={block} />
+            return <StatsBlock key={key} data={block as any} />
           case 'PageBlocksTestimonial':
-            return <TestimonialBlock key={key} data={block} />
+            return <TestimonialBlock key={key} data={block as any} />
           default:
             console.warn(`Unknown block type: ${(block as any).__typename}`)
             return (

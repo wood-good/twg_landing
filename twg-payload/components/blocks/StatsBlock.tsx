@@ -1,10 +1,19 @@
 'use client'
 
-import type { PageBlocksStats } from '@/tina/__generated__/types'
 import { motion } from 'framer-motion'
 
+interface StatItem {
+  value?: string
+  label?: string
+  suffix?: string
+}
+
 interface StatsBlockProps {
-  data: PageBlocksStats
+  data: {
+    heading?: string
+    backgroundColor?: string
+    items?: StatItem[]
+  }
 }
 
 export default function StatsBlock({ data }: StatsBlockProps) {

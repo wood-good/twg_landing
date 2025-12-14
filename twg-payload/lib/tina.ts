@@ -1,15 +1,54 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import type { Page, PageQuery, PageQueryVariables } from '@/tina/__generated__/types'
+import { getPagePropsFromSanity } from './sanity'
 
-export type PageContent = Page
+// Generic page content type (works with MDX and Sanity)
+export interface PageContent {
+  title: string
+  description?: string
+  blocks?: any[]
+  seo?: {
+    title?: string
+    description?: string
+    ogImage?: any
+  }
+  hero?: {
+    heading?: string
+    subheading?: string
+    image?: string
+  }
+  _sys: {
+    filename: string
+    basename: string
+    breadcrumbs: string[]
+    path: string
+    relativePath: string
+    extension: string
+    template: string
+    collection: any
+  }
+  id: string
+  _values: any
+  body?: string
+}
+
+export interface PageQuery {
+  page: PageContent & { __typename: 'Page' }
+}
+
+export interface PageQueryVariables {
+  relativePath: string
+}
 
 export interface TinaPageProps {
   query: string
   variables: PageQueryVariables
   data: PageQuery
 }
+
+// Feature flag: use Sanity instead of MDX files
+const USE_SANITY = process.env.NEXT_PUBLIC_USE_SANITY === 'true'
 
 // Map _template names to __typename format expected by BlockRenderer
 const templateToTypename: Record<string, string> = {
@@ -74,6 +113,16 @@ function readMdxContent(slug: string) {
 }
 
 export async function getPageProps(slug: string): Promise<TinaPageProps> {
+  // Try Sanity first if enabled
+  if (USE_SANITY) {
+    const sanityProps = await getPagePropsFromSanity(slug)
+    if (sanityProps) {
+      return sanityProps as unknown as TinaPageProps
+    }
+    // Fall back to MDX if Sanity returns null
+    console.warn(`Sanity page not found for ${slug}, falling back to MDX`)
+  }
+
   const content = readMdxContent(slug)
 
   if (!content) {

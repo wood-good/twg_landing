@@ -1,19 +1,16 @@
 'use client'
 
-import { useTina } from 'tinacms/dist/react'
 import Hero from '@/components/Hero'
 import { BlockRenderer } from '@/components/blocks'
 import type { TinaPageProps } from '@/lib/tina'
 
-export default function HomePageClient(props: TinaPageProps) {
-  // useTina hook enables visual editing in the CMS
-  const { data } = useTina({
-    query: props.query,
-    variables: props.variables,
-    data: props.data,
-  })
+// Feature flag: use Sanity mode (no useTina hook needed)
+const USE_SANITY = process.env.NEXT_PUBLIC_USE_SANITY === 'true'
 
-  const content = data.page
+export default function HomePageClient(props: TinaPageProps) {
+  // When using Sanity, we don't need the useTina hook
+  // The data is already fetched and ready to use
+  const content = props.data.page
 
   // If blocks exist, render them using BlockRenderer
   if (content.blocks && content.blocks.length > 0) {

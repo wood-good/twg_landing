@@ -1,11 +1,21 @@
 'use client'
 
-import type { PageBlocksFeaturesGrid } from '@/tina/__generated__/types'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
+interface FeatureItem {
+  title?: string
+  description?: string
+  image?: string
+  link?: string
+}
+
 interface FeaturesGridBlockProps {
-  data: PageBlocksFeaturesGrid
+  data: {
+    heading?: string
+    columns?: string
+    items?: FeatureItem[]
+  }
 }
 
 export default function FeaturesGridBlock({ data }: FeaturesGridBlockProps) {

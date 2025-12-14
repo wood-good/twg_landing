@@ -1,12 +1,20 @@
 'use client'
 
-import type { PageBlocksImageSection } from '@/tina/__generated__/types'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
 
 interface ImageSectionBlockProps {
-  data: PageBlocksImageSection
+  data: {
+    heading?: string
+    text?: string
+    image?: string
+    videoSrc?: string
+    ctaText?: string
+    ctaLink?: string
+    overlayPosition?: string
+    theme?: string
+  }
 }
 
 export default function ImageSectionBlock({ data }: ImageSectionBlockProps) {

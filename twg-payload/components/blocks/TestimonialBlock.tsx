@@ -1,10 +1,17 @@
 'use client'
 
-import type { PageBlocksTestimonial } from '@/tina/__generated__/types'
 import { motion } from 'framer-motion'
 
 interface TestimonialBlockProps {
-  data: PageBlocksTestimonial
+  data: {
+    quote?: string
+    author?: string
+    role?: string
+    authorImage?: string
+    image?: string
+    backgroundColor?: string
+    layout?: string
+  }
 }
 
 export default function TestimonialBlock({ data }: TestimonialBlockProps) {

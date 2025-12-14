@@ -1,10 +1,16 @@
 'use client'
 
-import type { PageBlocksHero } from '@/tina/__generated__/types'
 import Hero from '@/components/Hero'
 
 interface HeroBlockProps {
-  data: PageBlocksHero
+  data: {
+    heading?: string
+    subheading?: string
+    ctaText?: string
+    ctaLink?: string
+    backgroundImage?: string
+    size?: string
+  }
 }
 
 export default function HeroBlock({ data }: HeroBlockProps) {
