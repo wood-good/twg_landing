@@ -46,10 +46,17 @@ export default defineType({
               rows: 2,
             }),
             defineField({
+              name: 'icon',
+              title: 'Icon Name',
+              type: 'string',
+              description: 'Lucide icon name (e.g., "Grid3x3", "TreePine", "Leaf", "Factory"). See lucide.dev/icons for options.',
+            }),
+            defineField({
               name: 'image',
-              title: 'Image/Icon',
+              title: 'Image (optional)',
               type: 'image',
               options: { hotspot: true },
+              description: 'Optional image. If provided, overrides the icon.',
             }),
             defineField({
               name: 'link',

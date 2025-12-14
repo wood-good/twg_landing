@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import * as LucideIcons from 'lucide-react'
 
 interface FeatureItem {
   title?: string
   description?: string
+  icon?: string
   image?: string
   link?: string
 }
@@ -16,6 +18,17 @@ interface FeaturesGridBlockProps {
     columns?: string
     items?: FeatureItem[]
   }
+}
+
+// Dynamic icon component
+function DynamicIcon({ name, className }: { name: string; className?: string }) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const icons = LucideIcons as any
+  const IconComponent = icons[name]
+  if (!IconComponent || typeof IconComponent !== 'function') {
+    return <LucideIcons.HelpCircle className={className} />
+  }
+  return <IconComponent className={className} />
 }
 
 export default function FeaturesGridBlock({ data }: FeaturesGridBlockProps) {
@@ -56,15 +69,17 @@ export default function FeaturesGridBlock({ data }: FeaturesGridBlockProps) {
               }}
               className={item.link ? 'group block hover-lift' : ''}
             >
-              <div className="aspect-square bg-cream mb-6 flex items-center justify-center text-gray-400 hover-scale overflow-hidden">
+              <div className="aspect-square bg-cream mb-6 flex items-center justify-center hover-scale overflow-hidden rounded-2xl">
                 {item.image ? (
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />
+                ) : item.icon ? (
+                  <DynamicIcon name={item.icon} className="w-16 h-16 text-moooi-charcoal group-hover:text-moooi-gold transition-colors duration-300" />
                 ) : (
-                  'Icon/Image'
+                  <LucideIcons.Box className="w-16 h-16 text-gray-400" />
                 )}
               </div>
               <h3 className="text-3xl font-bold mb-4 group-hover:text-gray-600 transition-colors">
