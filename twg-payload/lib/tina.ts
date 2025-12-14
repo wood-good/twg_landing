@@ -48,7 +48,7 @@ export interface TinaPageProps {
 }
 
 // Feature flag: use Sanity instead of MDX files
-const USE_SANITY = process.env.NEXT_PUBLIC_USE_SANITY === 'true'
+const USE_SANITY = process.env.NEXT_PUBLIC_USE_SANITY?.trim() === 'true'
 
 // Map _template names to __typename format expected by BlockRenderer
 const templateToTypename: Record<string, string> = {
