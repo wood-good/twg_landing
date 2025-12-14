@@ -18,7 +18,7 @@ export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: process.env.NODE_ENV === 'production',
+  useCdn: false, // Disable CDN to ensure fresh content
 })
 
 // Preview client for draft content (requires token)
