@@ -2,7 +2,38 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import * as LucideIcons from 'lucide-react'
+import {
+  // Default/fallback icons
+  HelpCircle,
+  Box,
+  // Product icons
+  Grid3x3,
+  Armchair,
+  Layers,
+  Cpu,
+  Square,
+  // Sustainability icons
+  TreePine,
+  Infinity,
+  CheckCircle,
+  Leaf,
+  // Contact icons
+  MapPin,
+  Mail,
+  Phone,
+  // About icons
+  Shield,
+  History,
+  Heart,
+  // Home page icons
+  Handshake,
+  TreeDeciduous,
+  // Manufacturing icons
+  Clock,
+  Maximize,
+  Wallet,
+} from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 interface FeatureItem {
   title?: string
@@ -20,13 +51,45 @@ interface FeaturesGridBlockProps {
   }
 }
 
+// Map icon names to actual components
+const iconMap: Record<string, LucideIcon> = {
+  // Default/fallback
+  HelpCircle,
+  Box,
+  // Product icons
+  Grid3x3,
+  Armchair,
+  Layers,
+  Cpu,
+  Square,
+  // Sustainability icons
+  TreePine,
+  Infinity,
+  CheckCircle,
+  Leaf,
+  // Contact icons
+  MapPin,
+  Mail,
+  Phone,
+  // About icons
+  Shield,
+  History,
+  Heart,
+  // Home page icons
+  Handshake,
+  TreeDeciduous,
+  // Manufacturing icons
+  Clock,
+  Maximize,
+  Wallet,
+}
+
 // Dynamic icon component
 function DynamicIcon({ name, className }: { name: string; className?: string }) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const icons = LucideIcons as any
-  const IconComponent = icons[name]
-  if (!IconComponent || typeof IconComponent !== 'function') {
-    return <LucideIcons.HelpCircle className={className} />
+  const IconComponent = iconMap[name]
+  if (!IconComponent) {
+    console.warn(`Icon not found: ${name}`)
+    return <HelpCircle className={className} />
   }
   return <IconComponent className={className} />
 }
@@ -79,7 +142,7 @@ export default function FeaturesGridBlock({ data }: FeaturesGridBlockProps) {
                 ) : item.icon ? (
                   <DynamicIcon name={item.icon} className="w-16 h-16 text-moooi-charcoal group-hover:text-moooi-gold transition-colors duration-300" />
                 ) : (
-                  <LucideIcons.Box className="w-16 h-16 text-gray-400" />
+                  <Box className="w-16 h-16 text-gray-400" />
                 )}
               </div>
               <h3 className="text-3xl font-bold mb-4 group-hover:text-gray-600 transition-colors">
