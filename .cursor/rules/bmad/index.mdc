@@ -29,6 +29,7 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 
 **Agents:**
 - @bmad/core/agents/bmad-master - bmad-master
+- @bmad/core/agents/bmad-master - bmad-master
 
 **Tasks:**
 - @bmad/core/tasks/advanced-elicitation - advanced-elicitation
@@ -40,6 +41,7 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 **Workflows:**
 - @bmad/core/workflows/brainstorming - brainstorming
 - @bmad/core/workflows/party-mode - party-mode
+- @bmad/core/workflows/brainstorming-session - brainstorming-session
 
 ### BMB
 
@@ -47,25 +49,22 @@ BMAD rules have been installed to: `.cursor/rules/bmad/`
 - @bmad/bmb/agents/bmad-builder - bmad-builder
 
 **Workflows:**
-- @bmad/bmb/workflows/audit-workflow - audit-workflow
-- @bmad/bmb/workflows/convert-legacy - convert-legacy
+- @bmad/bmb/workflows/Meal Prep & Nutrition Plan - Meal Prep & Nutrition Plan
 - @bmad/bmb/workflows/create-agent - create-agent
 - @bmad/bmb/workflows/create-module - create-module
 - @bmad/bmb/workflows/create-workflow - create-workflow
 - @bmad/bmb/workflows/edit-agent - edit-agent
-- @bmad/bmb/workflows/edit-module - edit-module
 - @bmad/bmb/workflows/edit-workflow - edit-workflow
-- @bmad/bmb/workflows/module-brief - module-brief
-- @bmad/bmb/workflows/redoc - redoc
+- @bmad/bmb/workflows/workflow-compliance-check - workflow-compliance-check
 
 ### CIS
 
 **Agents:**
-- @bmad/cis/agents/README - README
 - @bmad/cis/agents/brainstorming-coach - brainstorming-coach
 - @bmad/cis/agents/creative-problem-solver - creative-problem-solver
 - @bmad/cis/agents/design-thinking-coach - design-thinking-coach
 - @bmad/cis/agents/innovation-strategist - innovation-strategist
+- @bmad/cis/agents/presentation-master - presentation-master
 - @bmad/cis/agents/storyteller - storyteller
 
 **Workflows:**
