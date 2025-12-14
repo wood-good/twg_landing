@@ -1,9 +1,0 @@
-# Setup Frontend Framework Workflow
-name: setup-frontend-framework
-description: "Initialize React/Next.js/Astro/Angular with TypeScript and tooling"
-author: "Lieutenant Nova"
-config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
-installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/setup-frontend-framework"
-template: false
-instructions: "{installed_path}/instructions.md"
-standalone: true

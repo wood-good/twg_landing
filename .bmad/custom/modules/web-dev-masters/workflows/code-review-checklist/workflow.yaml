@@ -1,9 +1,0 @@
-# Code Review Checklist Workflow
-name: code-review-checklist
-description: "Automated code quality checks and review standards"
-author: "Sergeant Doakes & Squad"
-config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
-installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/code-review-checklist"
-template: false
-instructions: "{installed_path}/instructions.md"
-standalone: true

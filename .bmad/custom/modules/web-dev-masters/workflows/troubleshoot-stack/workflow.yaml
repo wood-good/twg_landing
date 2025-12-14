@@ -1,9 +1,0 @@
-# Troubleshoot Stack Workflow
-name: troubleshoot-stack
-description: "Systematic debugging for frontend, backend, and database issues"
-author: "All Squad Members"
-config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
-installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/troubleshoot-stack"
-template: false
-instructions: "{installed_path}/instructions.md"
-standalone: true

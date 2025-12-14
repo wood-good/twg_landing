@@ -1,9 +1,0 @@
-# Add Authentication Workflow
-name: add-authentication
-description: "Implement JWT/OAuth/session authentication with security best practices"
-author: "Captain Iron & Sergeant Doakes"
-config_source: "{project-root}/.bmad/web-dev-masters/config.yaml"
-installed_path: "{project-root}/.bmad/custom/modules/web-dev-masters/workflows/add-authentication"
-template: false
-instructions: "{installed_path}/instructions.md"
-standalone: true
