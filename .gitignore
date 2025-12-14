@@ -73,3 +73,4 @@ Icon
 public/media/
 public/storage/
 public/cache/
+.vercel

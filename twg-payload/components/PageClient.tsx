@@ -29,16 +29,15 @@ export default function PageClient({ fallbackHero, ...props }: PageClientProps) 
 
   // Fallback to legacy hero-based rendering
   const heroHeading = content.hero?.heading || fallbackHero?.heading || content.title || 'Welcome'
-  const heroSubheading = content.hero?.subheading || fallbackHero?.subheading || content.description
+  const heroSubheading = content.hero?.subheading || fallbackHero?.subheading || content.description || undefined
   const heroSize = fallbackHero?.size || 'default'
 
   return (
     <>
       <Hero
         heading={heroHeading}
-        subheading={heroSubheading}
+        subheading={heroSubheading ?? undefined}
         size={heroSize}
-        theme="light"
       />
 
       {/* Legacy content notice */}

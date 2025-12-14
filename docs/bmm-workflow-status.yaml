@@ -1,0 +1,93 @@
+# BMM Workflow Status - TWG Landing Page Launch
+# Generated: 2025-12-14
+# Status: ACTIVE - Launch deadline TODAY
+
+generated: "2025-12-14"
+project: "twg_landing"
+project_type: "landing-page"
+selected_track: "quick-launch"
+field_type: "brownfield"
+
+# Stack
+tech_stack:
+  frontend: "Next.js 15 + React"
+  cms: "TinaCMS"
+  deployment: "Vercel"
+
+# Reference document
+plan_document: "docs/problem-solution-2025-12-14.md"
+
+# Success Criteria (from problem-solution doc)
+success_criteria:
+  - id: build_passes
+    description: "Site builds without errors"
+    status: pending
+  - id: pages_load
+    description: "All 6 pages load (200 status)"
+    status: pending
+  - id: professional_images
+    description: "Professional images (stock acceptable)"
+    status: pending
+  - id: public_url
+    description: "Site accessible via public URL"
+    status: pending
+  - id: mobile_responsive
+    description: "Renders correctly on mobile"
+    status: pending
+  - id: contact_form
+    description: "Contact form (placeholder OK)"
+    status: pending
+    required: false
+
+# Implementation Steps
+workflow_status:
+  - id: fix_build
+    name: "Remove/stub Payload admin routes"
+    status: pending
+    blocking: true
+
+  - id: verify_build
+    name: "Run npm run build - verify fix"
+    status: pending
+    depends_on: fix_build
+
+  - id: source_images
+    name: "Source 10-15 stock images (wood/manufacturing)"
+    status: pending
+    parallel: true
+
+  - id: replace_images
+    name: "Replace placeholder images in content"
+    status: pending
+    depends_on: source_images
+
+  - id: contact_form
+    name: "Update contact form to mailto/placeholder"
+    status: pending
+    required: false
+
+  - id: vercel_config
+    name: "Configure Vercel project"
+    status: pending
+    depends_on: verify_build
+
+  - id: env_vars
+    name: "Set environment variables in Vercel"
+    status: pending
+    depends_on: vercel_config
+
+  - id: deploy
+    name: "Deploy and verify all pages"
+    status: pending
+    depends_on: [env_vars, replace_images]
+
+  - id: share_url
+    name: "Share URL with client"
+    status: pending
+    depends_on: deploy
+
+# Notes
+notes:
+  - "Payload CMS admin NOT required - TinaCMS handles content"
+  - "Stock images acceptable for launch"
+  - "Real brand assets can be swapped post-launch"

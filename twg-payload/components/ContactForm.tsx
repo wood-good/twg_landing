@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 
+const CONTACT_EMAIL = 'hello@twg.com' // Update with actual email
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,9 +13,17 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact from ${formData.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )
+
+    // Open email client
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+
+    // Reset form
     setFormData({ name: '', email: '', message: '' })
   }
 

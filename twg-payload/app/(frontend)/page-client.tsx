@@ -28,8 +28,6 @@ export default function HomePageClient(props: TinaPageProps) {
         subheading={content.hero?.subheading || "Where innovation meets craftsmanship"}
         ctaText="Discover Our Work"
         ctaLink="/products"
-        theme="light"
-        glassEffect={false}
       />
 
       {/* Legacy content notice */}
