@@ -11,6 +11,32 @@ export interface TinaPageProps {
   data: PageQuery
 }
 
+// Map _template names to __typename format expected by BlockRenderer
+const templateToTypename: Record<string, string> = {
+  hero: 'PageBlocksHero',
+  featuresGrid: 'PageBlocksFeaturesGrid',
+  editorialText: 'PageBlocksEditorialText',
+  imageSection: 'PageBlocksImageSection',
+  cta: 'PageBlocksCta',
+  stats: 'PageBlocksStats',
+  testimonial: 'PageBlocksTestimonial',
+}
+
+// Transform blocks array to include __typename
+function transformBlocks(blocks: any[] | undefined) {
+  if (!blocks || !Array.isArray(blocks)) return []
+
+  return blocks.map((block) => {
+    const template = block._template
+    const typename = templateToTypename[template] || `PageBlocks${template?.charAt(0).toUpperCase()}${template?.slice(1)}`
+
+    return {
+      ...block,
+      __typename: typename,
+    }
+  })
+}
+
 // Read MDX file directly from filesystem (works at build time and runtime)
 function readMdxContent(slug: string) {
   const contentDir = path.join(process.cwd(), 'content', 'pages')
@@ -23,8 +49,14 @@ function readMdxContent(slug: string) {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
   const { data, content } = matter(fileContent)
 
-  return {
+  // Transform blocks to include __typename
+  const transformedData = {
     ...data,
+    blocks: transformBlocks(data.blocks),
+  }
+
+  return {
+    ...transformedData,
     body: content,
     _sys: {
       filename: slug,
